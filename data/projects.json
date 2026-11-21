@@ -28,76 +28,12 @@
       "code": null,
       "video": null,
       "live": null,
-      "itch": "https://pokecris200.itch.io/el-silbido-del-mohan"
+      "itch": "https://pokecris200.itch.io/el-silbido-del-mohan",
+      "web": null
     },
     "embed": {
       "url": "https://itch.io/embed-upload/20618130?color=0A1430",
       "allow": "autoplay; fullscreen; gamepad"
-    }
-  },
-  {
-    "id": "vr-apartment",
-    "draft": true,
-    "year": "2026",
-    "platform": [
-      "vr"
-    ],
-    "tech": [
-      "Unity",
-      "C#",
-      "XR"
-    ],
-    "cover": "assets/img/projects/vr-apartment-cover.svg",
-    "gallery": [],
-    "links": {
-      "play": null,
-      "code": null,
-      "video": null,
-      "live": null,
-      "itch": null
-    }
-  },
-  {
-    "id": "infographic",
-    "draft": true,
-    "year": "2026",
-    "platform": [
-      "web"
-    ],
-    "tech": [
-      "JavaScript",
-      "Figma"
-    ],
-    "cover": "assets/img/projects/infographic-cover.svg",
-    "gallery": [],
-    "links": {
-      "play": null,
-      "code": null,
-      "video": null,
-      "live": null,
-      "itch": null
-    }
-  },
-  {
-    "id": "ar-card",
-    "draft": true,
-    "year": "2026",
-    "platform": [
-      "ar"
-    ],
-    "tech": [
-      "Unity",
-      "C#",
-      "AR"
-    ],
-    "cover": "assets/img/projects/ar-card-cover.svg",
-    "gallery": [],
-    "links": {
-      "play": null,
-      "code": null,
-      "video": null,
-      "live": null,
-      "itch": null
     }
   },
   {
@@ -137,6 +73,166 @@
       "url": "https://espejo-magico-unity.vercel.app",
       "allow": "camera; autoplay; fullscreen",
       "size": "~45 MB"
+    }
+  },
+  {
+    "id": "ar-card",
+    "draft": true,
+    "year": "2026",
+    "platform": [
+      "ar"
+    ],
+    "tech": [
+      "Unity",
+      "C#",
+      "AR"
+    ],
+    "cover": "assets/img/projects/ar-card-cover.svg",
+    "gallery": [],
+    "links": {
+      "play": null,
+      "code": null,
+      "video": null,
+      "live": null,
+      "itch": null,
+      "web": null
+    }
+  },
+  {
+    "id": "vr-apartment",
+    "draft": true,
+    "year": "2026",
+    "platform": [
+      "vr"
+    ],
+    "tech": [
+      "Unity",
+      "C#",
+      "XR"
+    ],
+    "cover": "assets/img/projects/vr-apartment-cover.svg",
+    "gallery": [],
+    "links": {
+      "play": null,
+      "code": null,
+      "video": null,
+      "live": null,
+      "itch": null,
+      "web": null
+    }
+  },
+  {
+    "id": "voces",
+    "draft": true,
+    "year": "",
+    "platform": [
+      "web"
+    ],
+    "tech": [
+      "p5.js",
+      "JavaScript",
+      "TODO: sensors / hardware"
+    ],
+    "cover": "assets/img/projects/voces-cover.svg",
+    "gallery": [],
+    "links": {
+      "play": null,
+      "itch": null,
+      "live": null,
+      "web": null,
+      "video": null,
+      "code": null
+    },
+    "extraLinks": [
+      {
+        "label": "content.voces.links.display",
+        "url": "https://editor.p5js.org/DanieLudens/full/lnPPiJeRS"
+      },
+      {
+        "label": "content.voces.links.phone",
+        "url": "https://editor.p5js.org/DanieLudens/full/MVcQl7FvT"
+      }
+    ]
+  },
+  {
+    "id": "semana-santa",
+    "draft": true,
+    "year": "",
+    "platform": [],
+    "tech": [
+      "Unity",
+      "TODO"
+    ],
+    "cover": "assets/img/projects/semana-santa-cover.svg",
+    "gallery": [],
+    "links": {
+      "play": null,
+      "itch": null,
+      "live": null,
+      "web": null,
+      "video": null,
+      "code": null
+    }
+  },
+  {
+    "id": "gimmy",
+    "draft": true,
+    "year": "",
+    "platform": [],
+    "tech": [
+      "3D printing",
+      "TODO: CAD/3D tool (Blender? Fusion?)"
+    ],
+    "cover": "assets/img/projects/gimmy-cover.svg",
+    "gallery": [],
+    "links": {
+      "play": null,
+      "itch": null,
+      "live": null,
+      "web": null,
+      "video": null,
+      "code": null
+    }
+  },
+  {
+    "id": "infographic",
+    "draft": true,
+    "year": "2026",
+    "platform": [
+      "web"
+    ],
+    "tech": [
+      "JavaScript",
+      "Figma"
+    ],
+    "cover": "assets/img/projects/infographic-cover.svg",
+    "gallery": [],
+    "links": {
+      "play": null,
+      "code": null,
+      "video": null,
+      "live": null,
+      "itch": null,
+      "web": null
+    }
+  },
+  {
+    "id": "design-system",
+    "draft": true,
+    "year": "",
+    "platform": [],
+    "tech": [
+      "Figma"
+    ],
+    "cover": "assets/img/projects/design-system-cover.svg",
+    "gallery": [],
+    "links": {
+      "play": null,
+      "itch": null,
+      "live": null,
+      "web": null,
+      "video": null,
+      "code": null
     }
   }
 ]

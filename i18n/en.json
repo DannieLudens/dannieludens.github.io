@@ -74,19 +74,23 @@
       },
       {
         "label": "Engines and code",
-        "value": "Unity, C#, JavaScript"
+        "value": "Unity, C#, JavaScript, p5.js"
       },
       {
         "label": "AR",
         "value": "8th Wall, Vuforia"
       },
       {
-        "label": "Design and 3D",
-        "value": "Figma, Blender"
+        "label": "UX",
+        "value": "UX design, user testing"
+      },
+      {
+        "label": "Design, 3D and audio",
+        "value": "Figma, Blender, Adobe suite, Affinity, REAPER, VCV Rack"
       },
       {
         "label": "Workflow",
-        "value": "Git and GitHub, Visual Studio Code, AI tools for development"
+        "value": "Git and GitHub, Visual Studio Code, JetBrains Rider, AI tools for development"
       }
     ],
     "certificate": "See EF SET certificate",
@@ -100,22 +104,22 @@
     "items": {
       "education": [
         {
-          "when": "Expected Dec 2027",
+          "when": "Jan 2020 to Dec 2027 (expected)",
           "title": "Digital Entertainment Design Engineering",
           "org": "Universidad Pontificia Bolivariana, Medellín"
         },
         {
-          "when": "Dec 2026",
+          "when": "Sep 2026 to Dec 2026",
           "title": "Junior Unity Developer bootcamp",
           "org": "Generation Colombia, online"
         },
         {
           "when": "2022 to present",
-          "title": "Development and Engineering school courses",
-          "org": "Platzi, online"
+          "title": "Development and engineering courses",
+          "org": "Platzi, Coursera, Coddy and SoloLearn, online"
         },
         {
-          "when": "2017",
+          "when": "Sep 2017 to Dec 2017",
           "title": "Diploma in Digital Design Tools",
           "org": "CESDE, Medellín"
         }
@@ -137,10 +141,11 @@
           "when": "Nov 2021 to Jan 2022",
           "title": "Wholesale sales",
           "org": "M.A.C. & Status Clothing, Bello",
-          "detail": "Closed deals with wholesale buyers and managed their orders."
+          "detail": "Managed wholesale orders with clear, timely communication, which helped increase the company's revenue."
         }
       ]
-    }
+    },
+    "pdf": "assets/cv/Daniel-Ardila-CV-EN.pdf"
   },
   "contact": {
     "heading": "Contact",
@@ -274,8 +279,8 @@
       ]
     },
     "ar-card": {
-      "title": "AR Card",
-      "subtitle": "TODO: What the card shows",
+      "title": "AR Business Card",
+      "subtitle": "TODO: What appears when you scan the card",
       "pitch": "TODO: One sentence about what appears when you point your phone at the card.",
       "role": "TODO",
       "team": "TODO",
@@ -294,6 +299,103 @@
       "ai": [
         "TODO: What AI tools did, and what you did. If none: \"No AI tools were used to build this project.\""
       ]
+    },
+    "voces": {
+      "title": "Voces – Objects That Speak",
+      "subtitle": "Talking display cases for the Juan del Corral Museum",
+      "pitch": "An installation for the Juan del Corral Museum in Santa Fe de Antioquia: objects in the display cases tell their own story when a sensor detects a visitor, and an antique phone lets you call people from the past.",
+      "role": "UX designer and technology integrator",
+      "team": "TODO: Team size and roles",
+      "when": "Jul to Nov 2025",
+      "context": "Workshop 6 (Interactive Experiences) at UPB, designed for the Juan del Corral Museum in Santa Fe de Antioquia.",
+      "did": [
+        "Designed the experience for the display cases: each object tells its own story when a sensor detects someone nearby.",
+        "Designed the “Phone to the Past”, an antique telephone for calling people from the period and hearing their stories.",
+        "Ran the user tests and integrated the technology.",
+        "Built the prototypes in p5.js."
+      ],
+      "challenges": [
+        {
+          "title": "TODO: Hardest problem",
+          "body": "TODO: What you learned in the user tests and what you changed because of it."
+        }
+      ],
+      "ai": [
+        "TODO: What AI tools did, and what you did. If none: \"No AI tools were used to build this project.\""
+      ],
+      "links": {
+        "display": "Try the display cases prototype",
+        "phone": "Try the Phone to the Past prototype"
+      },
+      "gallery": []
+    },
+    "semana-santa": {
+      "title": "Semana Santa video mapping",
+      "subtitle": "Projection mapping made in Unity for the Museum of Religious Art, Santa Fe de Antioquia",
+      "pitch": "TODO: One sentence about what was projected, where and for whom.",
+      "role": "TODO",
+      "team": "TODO",
+      "when": "TODO",
+      "context": "Workshop 5 of the Interactive Experiences line at UPB. The piece was presented at the Museum of Religious Art in Santa Fe de Antioquia. TODO: Occasion (Holy Week event?) and goal.",
+      "did": [
+        "TODO"
+      ],
+      "challenges": [
+        {
+          "title": "TODO",
+          "body": "TODO"
+        }
+      ],
+      "ai": [
+        "TODO: What AI tools did, and what you did. If none: \"No AI tools were used to build this project.\""
+      ],
+      "gallery": []
+    },
+    "design-system": {
+      "title": "Design system for Microsoft Teams",
+      "subtitle": "UI/UX case study: a design system for Microsoft Teams, made in Figma",
+      "pitch": "TODO: One sentence about the problem and what the design system covers.",
+      "role": "TODO",
+      "team": "TODO",
+      "when": "TODO",
+      "context": "UX/UI course at UPB. TODO: Was it a redesign or a design system for a new feature? What problem did it solve?",
+      "did": [
+        "TODO"
+      ],
+      "challenges": [
+        {
+          "title": "TODO",
+          "body": "TODO"
+        }
+      ],
+      "ai": [
+        "TODO: What AI tools did, and what you did. If none: \"No AI tools were used to build this project.\""
+      ],
+      "gallery": []
+    },
+    "gimmy": {
+      "title": "Gimmy",
+      "subtitle": "Concept for a smart, gamified gym",
+      "pitch": "A concept for a smart gym that turns training into a game, built around a device that clips onto the cable machine weights to count reps and track progress.",
+      "role": "UX designer and technology integrator",
+      "team": "TODO: Team size and roles",
+      "when": "Jan to May 2024",
+      "context": "Digital Entertainment Project Management course at UPB. The team took a problem found in gyms from research to a product concept, with physical prototypes made by 3D printing.",
+      "did": [
+        "Helped turn the research on gym users’ problems into the concept of a smart, gamified gym.",
+        "Designed the device that attaches magnetically to cable machine weights and would count reps and report progress.",
+        "Prototyped its form with 3D printing. The project stayed at concept stage: we didn’t build the software or the electronics."
+      ],
+      "challenges": [
+        {
+          "title": "TODO",
+          "body": "TODO"
+        }
+      ],
+      "ai": [
+        "TODO: What AI tools did, and what you did. If none: \"No AI tools were used to build this project.\""
+      ],
+      "gallery": []
     }
   },
   "qa": {

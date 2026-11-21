@@ -47,7 +47,7 @@ Gallery items can be `{ "type": "image" }`, `{ "type": "video" }` (an .mp4 in th
 
 **QA section:** bug reports live under `qa.reports` in `i18n/en.json`. Add `"evidenceSrc": "assets/img/qa/<file>.png"` to show a screenshot. The section stays hidden while `"qaDraft": true` in `data/site.json`.
 
-**Resume PDF:** put the file in `assets/cv/` and set `"resumePdf": "assets/cv/Daniel-Ardila-CV.pdf"` in `data/site.json`. While it is `null`, the download buttons stay hidden.
+**Resume PDF:** one file per language in `assets/cv/` (`Daniel-Ardila-CV-EN.pdf`, `Daniel-Ardila-CV-ES.pdf`), set as `resume.pdf` in each `i18n/<lang>.json`. `resumePdf` in `data/site.json` is the fallback; with no path at all the download buttons stay hidden.
 
 **Playable build inside the page:** add `"embed": { "url": "...", "allow": "autoplay; fullscreen" }` to the project in `data/projects.json` and its texts under `content.<id>.embed` (`button`, `size`, `note`). The game loads only when the visitor clicks. For itch.io games, use the link from Distribute > Embed game.
 

@@ -62,6 +62,10 @@
       const url = p.links && p.links[kind];
       if (url) wrap.appendChild(el("a", { class: "button", text: t(label), attrs: { href: url, rel: "noopener" } }));
     });
+    // Extra links with their own label (e.g. two prototypes of the same project)
+    (p.extraLinks || []).forEach((x) => {
+      if (x.url) wrap.appendChild(el("a", { class: "button", text: t(x.label), attrs: { href: x.url, rel: "noopener" } }));
+    });
     return wrap;
   }
 
@@ -158,12 +162,13 @@
         ])
       ));
     });
-    // Resume buttons only show once the PDF path is set in data/site.json
+    // Resume PDF per language (resume.pdf in i18n), falling back to data/site.json
+    const pdf = t("resume.pdf") || site.resumePdf;
     ["resume-link", "resume-link-hero"].forEach((id) => {
       const a = document.getElementById(id);
       if (!a) return;
-      a.hidden = !site.resumePdf;
-      if (site.resumePdf) a.setAttribute("href", site.resumePdf);
+      a.hidden = !pdf;
+      if (pdf) a.setAttribute("href", pdf);
     });
   }
 

@@ -5,11 +5,11 @@
   ],
   "showDrafts": false,
   "contact": {
-    "email": "danieludenscontact@gmail.com",
+    "email": "danielestebandev@outlook.com",
     "linkedin": "https://www.linkedin.com/in/daniel-esteban-ardila-alzate/",
     "github": "https://github.com/DannieLudens",
     "itch": null
   },
-  "resumePdf": null,
+  "resumePdf": "assets/cv/Daniel-Ardila-CV-EN.pdf",
   "qaDraft": true
 }
