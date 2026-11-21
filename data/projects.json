@@ -27,7 +27,12 @@
       "play": null,
       "code": null,
       "video": null,
-      "live": null
+      "live": null,
+      "itch": "https://pokecris200.itch.io/el-silbido-del-mohan"
+    },
+    "embed": {
+      "url": "https://itch.io/embed-upload/20618130?color=0A1430",
+      "allow": "autoplay; fullscreen; gamepad"
     }
   },
   {
@@ -48,7 +53,8 @@
       "play": null,
       "code": null,
       "video": null,
-      "live": null
+      "live": null,
+      "itch": null
     }
   },
   {
@@ -68,7 +74,8 @@
       "play": null,
       "code": null,
       "video": null,
-      "live": null
+      "live": null,
+      "itch": null
     }
   },
   {
@@ -89,7 +96,8 @@
       "play": null,
       "code": null,
       "video": null,
-      "live": null
+      "live": null,
+      "itch": null
     }
   },
   {
@@ -122,7 +130,8 @@
       "web": "https://espejo-magico-gold.vercel.app/",
       "live": null,
       "video": null,
-      "code": null
+      "code": null,
+      "itch": null
     },
     "embed": {
       "url": "https://espejo-magico-unity.vercel.app",

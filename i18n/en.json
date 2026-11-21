@@ -51,7 +51,8 @@
     "web": "Web version",
     "embedHeading": "Try it here",
     "embedFull": "Open full screen",
-    "embedTitle": "Interactive build of {title}"
+    "embedTitle": "Interactive build of {title}",
+    "itch": "Play on itch.io"
   },
   "about": {
     "heading": "About",
@@ -189,7 +190,12 @@
         "I worked with Claude as a tutor and pair programmer. It explained techniques such as coyote time and jump buffering, suggested ways to structure the systems and reviewed my code. I built the mechanics step by step with that guidance, and I know what every line does and why it's there.",
         "For the browser build, I connected Claude to the Unity Editor as an AI agent to check project settings and profile the WebGL build. I reviewed each change before applying it.",
         "Commits, pull requests and design decisions stayed with me and my team."
-      ]
+      ],
+      "embed": {
+        "button": "Play El Silbido del Mohán",
+        "size": "Loads about 29 MB only after you click. Needs a keyboard.",
+        "note": "Works best on a computer. Controls: A and D to move, Space to jump, W to switch worlds, Esc to pause."
+      }
     },
     "espejo-magico": {
       "title": "Espejo Mágico",

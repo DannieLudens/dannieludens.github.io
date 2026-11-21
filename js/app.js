@@ -57,7 +57,7 @@
     if (includeOpen) {
       wrap.appendChild(el("a", { class: "button button--primary", text: t("projects.open"), attrs: { href: "#" + p.id } }));
     }
-    const kinds = [["play", "projects.play"], ["live", "projects.live"], ["web", "projects.web"], ["video", "projects.video"], ["code", "projects.code"]];
+    const kinds = [["play", "projects.play"], ["itch", "projects.itch"], ["live", "projects.live"], ["web", "projects.web"], ["video", "projects.video"], ["code", "projects.code"]];
     kinds.forEach(([kind, label]) => {
       const url = p.links && p.links[kind];
       if (url) wrap.appendChild(el("a", { class: "button", text: t(label), attrs: { href: url, rel: "noopener" } }));

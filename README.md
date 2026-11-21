@@ -38,7 +38,7 @@ Add `?preview` to the address (http://localhost:8000/?preview) to see draft proj
 1. Add an entry to `data/projects.json`. The order of the list is the order on the site.
 2. Add its texts under `content.<id>` in `i18n/en.json`, copying an existing project.
 3. Put its images in `assets/img/projects/` and reference them in `cover` and `gallery`.
-4. Fill in `links` (`play`, `live`, `video`, `code`). Links left as `null` don't show a button.
+4. Fill in `links` (`play`, `itch`, `live`, `web`, `video`, `code`). Links left as `null` don't show a button.
 5. Keep `"draft": true` until it's ready. Drafts are hidden on the live site.
 
 Gallery items can be `{ "type": "image" }`, `{ "type": "video" }` (an .mp4 in the repo) or `{ "type": "youtube", "src": "https://www.youtube-nocookie.com/embed/<id>" }`.
@@ -48,6 +48,8 @@ Gallery items can be `{ "type": "image" }`, `{ "type": "video" }` (an .mp4 in th
 **QA section:** bug reports live under `qa.reports` in `i18n/en.json`. Add `"evidenceSrc": "assets/img/qa/<file>.png"` to show a screenshot. The section stays hidden while `"qaDraft": true` in `data/site.json`.
 
 **Resume PDF:** put the file in `assets/cv/` and set `"resumePdf": "assets/cv/Daniel-Ardila-CV.pdf"` in `data/site.json`. While it is `null`, the download buttons stay hidden.
+
+**Playable build inside the page:** add `"embed": { "url": "...", "allow": "autoplay; fullscreen" }` to the project in `data/projects.json` and its texts under `content.<id>.embed` (`button`, `size`, `note`). The game loads only when the visitor clicks. For itch.io games, use the link from Distribute > Embed game.
 
 **Find unfinished text:** search the repo for `TODO`. Unfinished text is highlighted with a dashed outline on the page.
 
