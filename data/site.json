@@ -1,0 +1,15 @@
+{
+  "defaultLanguage": "en",
+  "languages": [
+    "en"
+  ],
+  "showDrafts": false,
+  "contact": {
+    "email": "danieludenscontact@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/daniel-esteban-ardila-alzate/",
+    "github": "https://github.com/DannieLudens",
+    "itch": null
+  },
+  "resumePdf": null,
+  "qaDraft": true
+}

@@ -1,0 +1,3 @@
+{
+  "_note": "Spanish version. Copy the structure of en.json and translate. Any key missing here falls back to English. Add \"es\" to languages in data/site.json to show the language switch."
+}

@@ -1,0 +1,133 @@
+[
+  {
+    "id": "mohan",
+    "draft": false,
+    "year": "2026",
+    "platform": [
+      "web"
+    ],
+    "tech": [
+      "Unity 6",
+      "C#",
+      "URP 2D",
+      "Tilemaps",
+      "Input System",
+      "WebGL",
+      "Git / GitHub Projects"
+    ],
+    "cover": "assets/img/projects/mohan-cover.svg",
+    "gallery": [
+      {
+        "type": "image",
+        "src": "assets/img/projects/mohan-cover.svg",
+        "alt": "mohan.gallery.0"
+      }
+    ],
+    "links": {
+      "play": null,
+      "code": null,
+      "video": null,
+      "live": null
+    }
+  },
+  {
+    "id": "vr-apartment",
+    "draft": true,
+    "year": "2026",
+    "platform": [
+      "vr"
+    ],
+    "tech": [
+      "Unity",
+      "C#",
+      "XR"
+    ],
+    "cover": "assets/img/projects/vr-apartment-cover.svg",
+    "gallery": [],
+    "links": {
+      "play": null,
+      "code": null,
+      "video": null,
+      "live": null
+    }
+  },
+  {
+    "id": "infographic",
+    "draft": true,
+    "year": "2026",
+    "platform": [
+      "web"
+    ],
+    "tech": [
+      "JavaScript",
+      "Figma"
+    ],
+    "cover": "assets/img/projects/infographic-cover.svg",
+    "gallery": [],
+    "links": {
+      "play": null,
+      "code": null,
+      "video": null,
+      "live": null
+    }
+  },
+  {
+    "id": "ar-card",
+    "draft": true,
+    "year": "2026",
+    "platform": [
+      "ar"
+    ],
+    "tech": [
+      "Unity",
+      "C#",
+      "AR"
+    ],
+    "cover": "assets/img/projects/ar-card-cover.svg",
+    "gallery": [],
+    "links": {
+      "play": null,
+      "code": null,
+      "video": null,
+      "live": null
+    }
+  },
+  {
+    "id": "espejo-magico",
+    "draft": false,
+    "year": "2026",
+    "platform": [
+      "web",
+      "ar"
+    ],
+    "tech": [
+      "Unity",
+      "WebGL",
+      "JavaScript",
+      "Hand tracking (ML)",
+      "Snapchat AR API",
+      "Cloudinary",
+      "Vercel"
+    ],
+    "cover": "assets/img/projects/espejo-magico-cover.svg",
+    "gallery": [
+      {
+        "type": "image",
+        "src": "assets/img/projects/espejo-magico-cover.svg",
+        "alt": "espejo-magico.gallery.0"
+      }
+    ],
+    "links": {
+      "play": "https://espejo-magico-unity.vercel.app",
+      "web": "https://espejo-magico-gold.vercel.app/",
+      "live": null,
+      "video": null,
+      "code": null
+    },
+    "embed": {
+      "url": "https://espejo-magico-unity.vercel.app",
+      "allow": "camera; autoplay; fullscreen",
+      "size": "~45 MB"
+    }
+  }
+]

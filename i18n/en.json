@@ -1,0 +1,337 @@
+{
+  "meta": {
+    "title": "Daniel Ardila | Unity developer, AR and VR",
+    "description": "Portfolio of Daniel Ardila, a Unity developer from Medellín, Colombia, building games and AR/VR experiences."
+  },
+  "nav": {
+    "skip": "Skip to content",
+    "home": "Daniel Ardila",
+    "projects": "Projects",
+    "about": "About",
+    "resume": "Resume",
+    "contact": "Contact",
+    "language": "Language",
+    "qa": "QA"
+  },
+  "hero": {
+    "name": "Daniel Ardila",
+    "role": "Unity developer building games and AR/VR experiences.",
+    "intro": "I take ideas from sketch to something people can play, touch and walk around in. Based in Medellín, Colombia, and open to junior roles in Unity, XR and QA.",
+    "ctaProjects": "See projects",
+    "ctaResume": "Download resume",
+    "sceneLabel": "Placeholder for an interactive 3D scene"
+  },
+  "projects": {
+    "heading": "Projects",
+    "lead": "Selected work. Each project says what I built myself.",
+    "role": "My role",
+    "team": "Team",
+    "when": "When",
+    "builtWith": "Built with",
+    "open": "View project",
+    "play": "Play",
+    "code": "Code",
+    "video": "Video",
+    "live": "Open live version",
+    "draft": "Draft, hidden on the live site",
+    "back": "All projects",
+    "context": "Context",
+    "did": "What I did",
+    "challenges": "Challenges and how I solved them",
+    "gallery": "Screenshots and video",
+    "prev": "Previous project",
+    "next": "Next project",
+    "notFound": "That project doesn't exist. Go back to all projects.",
+    "platform": {
+      "web": "Plays in the browser",
+      "vr": "VR",
+      "ar": "AR"
+    },
+    "ai": "How I used AI",
+    "web": "Web version",
+    "embedHeading": "Try it here",
+    "embedFull": "Open full screen",
+    "embedTitle": "Interactive build of {title}"
+  },
+  "about": {
+    "heading": "About",
+    "body": [
+      "I'm a Unity developer and creative technologist from Medellín, Colombia. I study Digital Entertainment Design Engineering at Universidad Pontificia Bolivariana (UPB) and I'm finishing the Junior Unity Developer bootcamp at Generation Colombia.",
+      "What I enjoy most is the moment an idea starts to respond: a jump that finally feels right, an AR filter that follows your hands, a room in VR you can reach into. I co-founded BioFrame, an early-stage creative technology studio, where I prototype interactive solutions, and in 2026 I helped other students build their VR and AR projects as a teaching assistant at UPB.",
+      "I use AI tools, mainly Claude, as a tutor, a pair programmer and a testing assistant. They help me learn faster and ship sooner, but I don't keep code I can't explain. Each project page says what the AI did and what I did.",
+      "I'm looking for my first role in the industry, as a junior Unity developer, in XR, or in QA. Testing a build, measuring it and writing down what breaks is part of how I work."
+    ],
+    "factsHeading": "Quick facts",
+    "facts": [
+      {
+        "label": "Based in",
+        "value": "Medellín, Colombia"
+      },
+      {
+        "label": "Languages",
+        "value": "Spanish (native), English (C1, EF SET)"
+      },
+      {
+        "label": "Engines and code",
+        "value": "Unity, C#, JavaScript"
+      },
+      {
+        "label": "AR",
+        "value": "8th Wall, Vuforia"
+      },
+      {
+        "label": "Design and 3D",
+        "value": "Figma, Blender"
+      },
+      {
+        "label": "Workflow",
+        "value": "Git and GitHub, Visual Studio Code, AI tools for development"
+      }
+    ],
+    "certificate": "See EF SET certificate",
+    "bioframe": "Visit BioFrame"
+  },
+  "resume": {
+    "heading": "Resume",
+    "download": "Download resume (PDF)",
+    "education": "Education",
+    "experience": "Experience",
+    "items": {
+      "education": [
+        {
+          "when": "Expected Dec 2027",
+          "title": "Digital Entertainment Design Engineering",
+          "org": "Universidad Pontificia Bolivariana, Medellín"
+        },
+        {
+          "when": "Dec 2026",
+          "title": "Junior Unity Developer bootcamp",
+          "org": "Generation Colombia, online"
+        },
+        {
+          "when": "2022 to present",
+          "title": "Development and Engineering school courses",
+          "org": "Platzi, online"
+        },
+        {
+          "when": "2017",
+          "title": "Diploma in Digital Design Tools",
+          "org": "CESDE, Medellín"
+        }
+      ],
+      "experience": [
+        {
+          "when": "Jul 2026 to present",
+          "title": "Co-founder and technology integrator",
+          "org": "BioFrame, Medellín",
+          "detail": "Prototyping interactive solutions for an early-stage creative technology studio, supported by the Medellín city entrepreneurship programs."
+        },
+        {
+          "when": "Jul 2026 to Sep 2026",
+          "title": "VR and AR teaching assistant, research group",
+          "org": "Universidad Pontificia Bolivariana",
+          "detail": "Helped students turn their ideas into VR experiences in Unity and advised AR projects with 8th Wall and Vuforia."
+        },
+        {
+          "when": "Nov 2021 to Jan 2022",
+          "title": "Wholesale sales",
+          "org": "M.A.C. & Status Clothing, Bello",
+          "detail": "Closed deals with wholesale buyers and managed their orders."
+        }
+      ]
+    }
+  },
+  "contact": {
+    "heading": "Contact",
+    "body": "I'm open to junior roles, internships and freelance work in Unity, XR and QA. Email is the fastest way to reach me.",
+    "email": "Email",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "itch": "itch.io",
+    "copy": "Copy email",
+    "copied": "Email copied"
+  },
+  "footer": {
+    "built": "Built by hand with HTML, CSS and JavaScript. Hosted on GitHub Pages."
+  },
+  "noscript": "This portfolio needs JavaScript to load its content.",
+  "content": {
+    "mohan": {
+      "title": "El Silbido del Mohán",
+      "subtitle": "The Mohán's Whistle",
+      "pitch": "A 2D platformer where you jump between the real world and the spirit world to gather offerings for the Mohán, a river spirit from Colombian folklore, and escape before it catches you.",
+      "role": "Gameplay programmer: I built every mechanic in the game",
+      "team": "4 people",
+      "when": "Nov 2026, in two days",
+      "context": "Made for Game Jam #2 of Generation Colombia's Junior Unity Developer bootcamp, on the theme \"Two Worlds\". My teammates handled art, UI art, sound and documentation, and I wrote all the gameplay code.",
+      "did": [
+        "Player controller with movement, jump, faster falling, coyote time and jump buffering.",
+        "World switching on one key, through a WorldManager singleton that sends events so every other system reacts on its own. It refuses to switch when the player would end up inside solid ground.",
+        "Objects that exist only in the real world, only in the spirit world, or in both.",
+        "The offering pickups, the altar that counts them, the escape sequence with its exit portal, and the game over screen.",
+        "The Mohán meter, the tension bar that fills while you stay in the spirit world.",
+        "Every value that a designer might tune, such as distances, timings, speeds and texts, exposed in the Inspector so the team could adjust the game without touching code."
+      ],
+      "challenges": [
+        {
+          "title": "Making the jump feel good",
+          "body": "The first jump felt floaty and missed inputs near ledges. I doubled gravity on the way down, capped the fall speed, and added 0.1 s of coyote time and jump buffering. I also set the jump height in tiles with a gizmo in the editor, so level design and physics speak the same units."
+        },
+        {
+          "title": "Getting the browser build ready for itch.io",
+          "body": "Before publishing, I ran a QA pass on the WebGL build with an AI agent connected to the Unity Editor. We profiled memory and download size, and found the long music tracks were set to decompress on load, which could take an estimated 80 to 90 MB of memory each. I switched them to compressed in memory, changed the compression to the format itch.io serves natively and stripped unused code. The result: about 27.5 MB to download, 144 FPS at the monitor's cap and zero console errors. I wrote it all up as a checklist for the team."
+        }
+      ],
+      "gallery": [
+        "Title screen of El Silbido del Mohán (placeholder until screenshots are added)"
+      ],
+      "ai": [
+        "I worked with Claude as a tutor and pair programmer. It explained techniques such as coyote time and jump buffering, suggested ways to structure the systems and reviewed my code. I built the mechanics step by step with that guidance, and I know what every line does and why it's there.",
+        "For the browser build, I connected Claude to the Unity Editor as an AI agent to check project settings and profile the WebGL build. I reviewed each change before applying it.",
+        "Commits, pull requests and design decisions stayed with me and my team."
+      ]
+    },
+    "espejo-magico": {
+      "title": "Espejo Mágico",
+      "subtitle": "Magic Mirror for the Telemedellín tour",
+      "pitch": "An interactive mirror for the Telemedellín studio tour. Visitors control it with hand gestures, try on AR filters and take their photo home with a QR code.",
+      "role": "Interactive experience designer and technology integrator",
+      "team": "6 people: 4 in animation, 2 in interactive experiences",
+      "when": "Jan to May 2026",
+      "context": "Final project of Workshop 7, the course that brings together the whole Digital Entertainment Design Engineering program at UPB. It won the program's highest recognition, voted by the faculty jury at the DEX 2026-1 awards.",
+      "did": [
+        "Designed the visitor experience, from the first gesture in front of the mirror to the photo they take home.",
+        "Integrated machine learning hand tracking so visitors control the mirror without touching anything.",
+        "Connected Snapchat's AR API to apply the filters, and Cloudinary to store each photo and deliver it through a QR code.",
+        "Built and maintained both versions of the experience, one in Unity and one for the web."
+      ],
+      "challenges": [
+        {
+          "title": "TODO: Daniel, add the hardest problem in this project",
+          "body": "TODO: One short paragraph: what went wrong or was hard (for example, gesture detection under the studio's lighting, or syncing the photo with Cloudinary before showing the QR), what you tried and what worked."
+        }
+      ],
+      "gallery": [
+        "Espejo Mágico experience (placeholder until screenshots are added)"
+      ],
+      "ai": [
+        "TODO: Did you use AI tools in this project (for code, research, the ML hand tracking setup)? Say what they did and what you did. If you didn't, write: \"No AI tools were used to build this project.\""
+      ],
+      "embed": {
+        "button": "Try Espejo Mágico (camera required)",
+        "note": "Works best on a computer with Chrome or Edge and a camera. Make a pinch gesture to move forward. Keys: N opens the presenters menu, M goes back to the mirror.",
+        "size": "Loads about 45 MB and asks for camera access only after you click."
+      }
+    },
+    "vr-apartment": {
+      "title": "VR Apartment",
+      "subtitle": "Interactive studio apartment in VR",
+      "pitch": "A studio apartment in VR where you can reach out and use the objects around you.",
+      "role": "TODO: Solo developer?",
+      "team": "TODO: Individual project?",
+      "when": "TODO: Semester",
+      "context": "TODO: Midterm project for the VR/AR course at UPB, improved after delivery.",
+      "did": [
+        "TODO: List the interactions (grab, open, switch on) and what you fixed in the new version."
+      ],
+      "challenges": [
+        {
+          "title": "TODO",
+          "body": "TODO"
+        }
+      ],
+      "gallery": [],
+      "ai": [
+        "TODO: What AI tools did, and what you did. If none: \"No AI tools were used to build this project.\""
+      ]
+    },
+    "infographic": {
+      "title": "Interactive infographic",
+      "subtitle": "TODO: Topic of the infographic",
+      "pitch": "TODO: One sentence about what the infographic explains and how people interact with it.",
+      "role": "TODO",
+      "team": "TODO",
+      "when": "TODO",
+      "context": "TODO: Course at UPB and goal of the project.",
+      "did": [
+        "TODO"
+      ],
+      "challenges": [
+        {
+          "title": "TODO",
+          "body": "TODO"
+        }
+      ],
+      "gallery": [],
+      "ai": [
+        "TODO: What AI tools did, and what you did. If none: \"No AI tools were used to build this project.\""
+      ]
+    },
+    "ar-card": {
+      "title": "AR Card",
+      "subtitle": "TODO: What the card shows",
+      "pitch": "TODO: One sentence about what appears when you point your phone at the card.",
+      "role": "TODO",
+      "team": "TODO",
+      "when": "TODO",
+      "context": "TODO: Course at UPB and goal of the project.",
+      "did": [
+        "TODO"
+      ],
+      "challenges": [
+        {
+          "title": "TODO",
+          "body": "TODO"
+        }
+      ],
+      "gallery": [],
+      "ai": [
+        "TODO: What AI tools did, and what you did. If none: \"No AI tools were used to build this project.\""
+      ]
+    }
+  },
+  "qa": {
+    "heading": "QA and bug reports",
+    "lead": "I test games the way a QA team does: reproduce the problem, write the steps, and say how serious it is.",
+    "draft": "Draft, hidden on the live site",
+    "fields": {
+      "game": "Game",
+      "environment": "Environment",
+      "build": "Build",
+      "steps": "Steps to reproduce",
+      "expected": "Expected result",
+      "actual": "Actual result",
+      "severity": "Severity",
+      "evidence": "Evidence"
+    },
+    "reports": [
+      {
+        "title": "Main menu buttons mix Spanish and English",
+        "game": "El Silbido del Mohán (my team's game)",
+        "environment": "TODO: Confirm. Windows 11, Chrome, WebGL build on itch.io",
+        "build": "TODO: Confirm. v1.0, Game Jam #2 release",
+        "steps": [
+          "Open the game page and click \"Run game\".",
+          "Wait for the main menu to load."
+        ],
+        "expected": "All menu buttons use the same language.",
+        "actual": "\"INICIAR\" is in Spanish, while \"OPTIONS\", \"CONTROLS\", \"CREDITS\" and \"EXIT\" are in English.",
+        "severity": "Minor: cosmetic and localization issue, it does not block play.",
+        "evidence": "TODO: Add a screenshot of the main menu."
+      },
+      {
+        "title": "TODO: Bug you found in a commercial game",
+        "game": "TODO: Game name and platform",
+        "environment": "TODO",
+        "build": "TODO",
+        "steps": [
+          "TODO"
+        ],
+        "expected": "TODO",
+        "actual": "TODO",
+        "severity": "TODO: Blocker, Critical, Major, Minor or Trivial, with one reason.",
+        "evidence": "TODO: Screenshot or short video."
+      }
+    ]
+  }
+}

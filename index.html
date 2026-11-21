@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Daniel Ardila | Unity developer, AR and VR</title>
+  <meta name="description" content="Portfolio of Daniel Ardila, a Unity developer from Medellín, Colombia, building games and AR/VR experiences.">
+  <meta property="og:title" content="Daniel Ardila | Unity developer, AR and VR">
+  <meta property="og:description" content="Games and AR/VR experiences built in Unity.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="nav.skip">Skip to content</a>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Main">
+      <a class="nav__home" href="#top" data-i18n="nav.home">Daniel Ardila</a>
+      <ul class="nav__links">
+        <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
+        <li id="nav-qa" hidden><a href="#qa" data-i18n="nav.qa">QA</a></li>
+        <li><a href="#about" data-i18n="nav.about">About</a></li>
+        <li><a href="#resume" data-i18n="nav.resume">Resume</a></li>
+        <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+      <div class="lang" id="lang-switch" hidden>
+        <span class="visually-hidden" data-i18n="nav.language">Language</span>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <!-- HOME VIEW -->
+    <div id="home-view">
+      <section class="hero" id="top" aria-labelledby="hero-name">
+        <div class="hero__text">
+          <div class="lock" id="lock">
+            <h1 class="hero__name" id="hero-name" data-i18n="hero.name">Daniel Ardila</h1>
+            <span class="lock__corner lock__corner--tl" aria-hidden="true"></span>
+            <span class="lock__corner lock__corner--tr" aria-hidden="true"></span>
+            <span class="lock__corner lock__corner--bl" aria-hidden="true"></span>
+            <span class="lock__corner lock__corner--br" aria-hidden="true"></span>
+          </div>
+          <p class="hero__role" data-i18n="hero.role"></p>
+          <p class="hero__intro" data-i18n="hero.intro"></p>
+          <div class="hero__actions">
+            <a class="button button--primary" href="#projects" data-i18n="hero.ctaProjects">See projects</a>
+            <a class="button" id="resume-link-hero" href="#" download data-i18n="hero.ctaResume">Download resume</a>
+          </div>
+        </div>
+
+        <!-- 3D slot: today an SVG; later js/scene.js can mount a Three.js canvas here -->
+        <figure class="hero__scene" id="hero-scene" role="img" data-i18n-aria="hero.sceneLabel">
+          <svg viewBox="0 0 600 520" aria-hidden="true" focusable="false">
+            <defs>
+              <linearGradient id="floor-fade" x1="0" y1="300" x2="0" y2="520" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#9DABC8" stop-opacity="0"/>
+                <stop offset="1" stop-color="#9DABC8" stop-opacity=".55"/>
+              </linearGradient>
+              <radialGradient id="floor-edge" cx="300" cy="420" r="300" gradientUnits="userSpaceOnUse">
+                <stop offset=".55" stop-color="#fff"/>
+                <stop offset="1" stop-color="#000"/>
+              </radialGradient>
+              <mask id="floor-mask"><rect width="600" height="520" fill="url(#floor-edge)"/></mask>
+            </defs>
+            <g stroke="url(#floor-fade)" stroke-width="1.5" fill="none" id="floor" mask="url(#floor-mask)"></g>
+            <g class="hero__object" fill="none" stroke-linejoin="round">
+              <polygon points="300,92 392,145 392,251 300,304 208,251 208,145" stroke="#E8EDF7" stroke-width="2.5"/>
+              <polyline points="208,145 300,198 392,145" stroke="#E8EDF7" stroke-width="2.5"/>
+              <line x1="300" y1="198" x2="300" y2="304" stroke="#E8EDF7" stroke-width="2.5"/>
+              <polygon points="300,92 392,145 300,198 208,145" fill="#F5B83D" fill-opacity=".9" stroke="none"/>
+            </g>
+            <ellipse cx="300" cy="392" rx="96" ry="22" fill="#0E1A38" opacity=".7"/>
+          </svg>
+        </figure>
+      </section>
+
+      <section class="section" id="projects" aria-labelledby="projects-heading">
+        <div class="section__head">
+          <h2 id="projects-heading" data-i18n="projects.heading">Projects</h2>
+          <p class="section__lead" data-i18n="projects.lead"></p>
+        </div>
+        <ol class="project-list" id="project-list"></ol>
+      </section>
+
+      <section class="section" id="qa" aria-labelledby="qa-heading" hidden>
+        <div class="section__head">
+          <h2 id="qa-heading" data-i18n="qa.heading">QA and bug reports</h2>
+          <p class="section__lead" data-i18n="qa.lead"></p>
+        </div>
+        <div class="reports" id="qa-reports"></div>
+      </section>
+
+      <section class="section section--about" id="about" aria-labelledby="about-heading">
+        <h2 id="about-heading" data-i18n="about.heading">About</h2>
+        <div class="about">
+          <div class="about__body" id="about-body"></div>
+          <aside class="about__facts" aria-labelledby="facts-heading">
+            <h3 id="facts-heading" data-i18n="about.factsHeading">Quick facts</h3>
+            <dl id="about-facts"></dl>
+            <p class="about__links">
+              <a href="https://cert.efset.org/Dzsifv" data-i18n="about.certificate">See EF SET certificate</a>
+              <a href="https://bioframe.studio/" data-i18n="about.bioframe">Visit BioFrame</a>
+            </p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section" id="resume" aria-labelledby="resume-heading">
+        <div class="section__head section__head--row">
+          <h2 id="resume-heading" data-i18n="resume.heading">Resume</h2>
+          <a class="button" id="resume-link" href="#" download data-i18n="resume.download">Download resume (PDF)</a>
+        </div>
+        <div class="resume">
+          <div>
+            <h3 data-i18n="resume.experience">Experience</h3>
+            <ol class="timeline" id="resume-experience"></ol>
+          </div>
+          <div>
+            <h3 data-i18n="resume.education">Education</h3>
+            <ol class="timeline" id="resume-education"></ol>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--contact" id="contact" aria-labelledby="contact-heading">
+        <h2 id="contact-heading" data-i18n="contact.heading">Contact</h2>
+        <p class="contact__body" data-i18n="contact.body"></p>
+        <p class="contact__email">
+          <a id="contact-email" href="#"></a>
+          <button class="button button--small" type="button" id="copy-email" data-i18n="contact.copy">Copy email</button>
+          <span class="contact__status" id="copy-status" role="status" aria-live="polite"></span>
+        </p>
+        <ul class="contact__links" id="contact-links"></ul>
+      </section>
+    </div>
+
+    <!-- PROJECT DETAIL VIEW (rendered by js/app.js when the URL ends in #<project-id>) -->
+    <article id="project-view" class="project" hidden></article>
+  </main>
+
+  <footer class="site-footer">
+    <p data-i18n="footer.built"></p>
+  </footer>
+
+  <noscript><p class="noscript">This portfolio needs JavaScript to load its content.</p></noscript>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
