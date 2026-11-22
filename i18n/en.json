@@ -59,7 +59,10 @@
     "embedHeading": "Try it here",
     "embedFull": "Open full screen",
     "embedTitle": "Interactive build of {title}",
-    "itch": "Play on itch.io"
+    "itch": "Play on itch.io",
+    "carousel": "More photos and clips",
+    "carouselPrev": "Previous",
+    "carouselNext": "Next"
   },
   "about": {
     "heading": "About",
@@ -358,43 +361,58 @@
     "voces": {
       "title": "Voces – Objects That Speak",
       "subtitle": "Talking display cases for the Juan del Corral Museum",
-      "pitch": "An installation for the Juan del Corral Museum in Santa Fe de Antioquia: objects in the display cases tell their own story when a sensor detects a visitor, and an antique phone lets you call people from the past.",
-      "role": "UX designer and technology integrator",
-      "team": "TODO: Team size and roles",
+      "pitch": "Two interactive pieces for museums in Santa Fe de Antioquia: an antique phone that lets you call people from the town's past, and display cases where the objects tell their own story while lights highlight each one.",
+      "role": "UI/UX designer and p5.js prototyper",
+      "team": "Team of four: project manager, head of engineering, UI/UX designer (me), and narrative and concept",
       "when": "Jul to Nov 2025",
-      "context": "Workshop 6 (Interactive Experiences) at UPB, designed for the Juan del Corral Museum in Santa Fe de Antioquia.",
+      "context": "Workshop 6 (Interactive Experiences) at UPB. Our studio of 13 students proposed Memoria Viva, three connected experiences for the Juan del Corral Museum and the Museum of Religious Art in Santa Fe de Antioquia. Voces was my team's part. In a field visit on 30 August 2025 we saw that the tour relied mostly on posters and that the objects didn't create an emotional connection, so we set out to let visitors listen to the past instead of only looking at it.",
       "did": [
-        "Designed the experience for the display cases: each object tells its own story when a sensor detects someone nearby.",
-        "Designed the “Phone to the Past”, an antique telephone for calling people from the period and hearing their stories.",
-        "Ran the user tests and integrated the technology.",
-        "Built the prototypes in p5.js."
+        "Designed the experience and the interface of both pieces as the team's UI/UX designer.",
+        "Built the digital prototypes in p5.js: an antique phone where you dial a character from a directory and hear their story, and a display case that narrates its objects, so we could test both ideas before moving to hardware.",
+        "Built the physical display case prototype with the head of engineering: a presence sensor starts the sequence when a visitor comes within range, and LEDs light each object as the voice mentions it.",
+        "Ran usability tests together with the team and turned the findings into design changes."
       ],
       "challenges": [
         {
-          "title": "TODO: Hardest problem",
-          "body": "TODO: What you learned in the user tests and what you changed because of it."
+          "title": "What the usability tests changed",
+          "body": "Most people understood the phone right away and found it more engaging than the display cases. Some didn't know which object the case was talking about, so we changed the start: the light reaches the object before the voice begins. Testers also pointed out that a green call icon in my phone prototype felt too modern, so we removed elements that recall today's technology and made the directory more visual. The AI voices felt mysterious and interesting, but people asked for them to sound more human and closer to each character."
         }
       ],
       "ai": [
-        "TODO: What AI tools did, and what you did. If none: \"No AI tools were used to build this project.\""
+        "The character voices were made with AI. Nicolás Quintero, in charge of narrative, used Pinokio and ElevenLabs to train a voice model on his own voice and gave it a different tone for each character; the woman's voice came from the ElevenLabs voice library. The scripts, the experience design, the prototypes and the hardware were made by the team. Our usability tests also measured how comfortable visitors felt listening to AI voices."
       ],
       "links": {
         "display": "Try the display cases prototype",
         "phone": "Try the Phone to the Past prototype"
       },
-      "gallery": []
+      "gallery": [
+        "Final presentation video: the project is explained while visitors try the antique phone and the display case lights up each object as it speaks.",
+        "A visitor at the final show holds the antique phone to his ear while dialing a number from the directory.",
+        "The installation set up for the final show: the Voces booklet, the phone directory and the display case on the table.",
+        "The phone directory: a booklet with illustrated portraits of the characters and the number to dial for each one.",
+        "Process: the 3D-printed pieces for the display case, cleaned of supports and then painted by hand.",
+        "Our team of four at the final show, holding the directory, the antique phone, the Voces sign and the display case."
+      ],
+      "credits": [
+        {
+          "before": "Made with Sebastián Andrés Pedroza Gallardo (project manager), Nicolás Alexander Parra Tamayo (head of engineering) and ",
+          "name": "Nicolás Quintero Cardona",
+          "url": "https://www.linkedin.com/in/nicol%C3%A1s-quintero-cardona/",
+          "after": " (narrative and concept)."
+        }
+      ]
     },
     "semana-santa": {
       "title": "Santa Pasión",
       "subtitle": "A Holy Week video mapping for Santa Fe de Antioquia, simulated in Unity",
-      "pitch": "A night-time walk through a colonial square in Santa Fe de Antioquia while a narrator tells the Passion in three acts and the church facade, its altar and the houses around it light up with projected video.",
-      "role": "Unity developer, 3D modeler and narrative: built the simulation, modeled the square and the church, and wrote the sequence",
+      "pitch": "A night-time walk through the square of the Church of Jesús Nazareno in Santa Fe de Antioquia while a narrator guides you through Lent, Holy Week and Easter, and the church facade, its altar and the houses around it light up with projected video.",
+      "role": "Project lead, Unity developer, 3D modeler and narrative",
       "team": "Team of four",
       "when": "May 2025",
-      "context": "Workshop 5 of the Experience Design line at UPB. The Museum of Religious Art, part of the Archdiocese of Santa Fe de Antioquia, opened its space to us for this project. The piece was one stop on a larger Holy Week route through the town's churches, each with its own experience. We couldn't project on the real building, so I simulated the video mapping in Unity and presented the complete sequence.",
+      "context": "Workshop 5 of the Interactive Experiences line at UPB. Our studio designed Sancta Lumina, a Holy Week route through three emblematic churches of Santa Fe de Antioquia (La Chinca, Jesús Nazareno and Santa Bárbara), each with its own experience. The Museum of Religious Art, part of the Archdiocese of Santa Fe de Antioquia, opened its space to us for this project. My team designed the second act, Santa Pasión, for the square and Church of Jesús Nazareno: a 15-minute sensory route in three scenes. We couldn't project on the real building, so I simulated the video mapping in Unity and presented the complete sequence.",
       "did": [
         "Modeled the square, the surrounding houses and the church in Blender.",
-        "Wrote the narrative: a sequence in three acts (Lent, the Passion and Easter) guided by a narrator's voice.",
+        "Wrote the narrative: three scenes (Lent, Holy Week and Easter), each led by its liturgical color (white and gold, purple, red) and guided by a narrator's voice.",
         "Built the simulation in Unity 6 (URP), with the projected videos playing on surfaces fitted to the church facade, the altar and the houses.",
         "Directed the whole sequence with Timeline and Cinemachine cameras, in sync with the voice-over and the soundscape.",
         "Lit the night scene with architectural lighting and exported the Windows build we used to present it."
@@ -422,7 +440,7 @@
           "before": "Made with ",
           "name": "Luciana Gutierrez Posada",
           "url": "https://www.linkedin.com/in/luciana-gutierrez-posada/",
-          "after": ", Ricardo Guerrero and Sebastián Pedroza."
+          "after": " (designer), Ricardo Arturo Guerrero Oliva (researcher) and Sebastián Andrés Pedroza Gallardo (head of engineering)."
         }
       ]
     },

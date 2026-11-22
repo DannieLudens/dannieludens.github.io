@@ -137,10 +137,54 @@
     "tech": [
       "p5.js",
       "JavaScript",
-      "TODO: sensors / hardware"
+      "Arduino",
+      "ESP32",
+      "DFPlayer Mini",
+      "Presence sensors",
+      "LED strips",
+      "Laser cutting"
     ],
-    "cover": "assets/img/projects/voces-cover.svg",
-    "gallery": [],
+    "cover": "assets/img/projects/voces/cover.jpg",
+    "gallery": [
+      {
+        "type": "video",
+        "src": "assets/video/voces-presentation.mp4",
+        "poster": "assets/img/projects/voces/display-case.jpg",
+        "portrait": true
+      },
+      {
+        "type": "video",
+        "src": "assets/video/voces-visitor-call.mp4",
+        "poster": "assets/img/projects/voces/voces-visitor-call-poster.jpg",
+        "portrait": true,
+        "ratio": "3 / 4"
+      },
+      {
+        "type": "video",
+        "src": "assets/video/voces-setup.mp4",
+        "poster": "assets/img/projects/voces/voces-setup-poster.jpg",
+        "portrait": true,
+        "ratio": "3 / 4"
+      },
+      {
+        "type": "image",
+        "src": "assets/img/projects/voces/directory.jpg",
+        "portrait": true
+      },
+      {
+        "type": "video",
+        "src": "assets/video/voces-3d-print-process.mp4",
+        "poster": "assets/img/projects/voces/voces-3d-print-process-poster.jpg",
+        "portrait": true,
+        "ratio": "3 / 4"
+      },
+      {
+        "type": "image",
+        "src": "assets/img/projects/voces/team.jpg",
+        "portrait": true,
+        "end": true
+      }
+    ],
     "links": {
       "play": null,
       "itch": null,

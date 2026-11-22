@@ -223,6 +223,57 @@
     return el("img", { attrs: { src: item.src, alt: altText, loading: "lazy", width: "1600", height: "1000" } });
   }
 
+  function galleryFrame(p, item, alt, extra) {
+    const media = renderMedia(item, alt || c(p.id, "title"));
+    if (item.ratio) media.style.aspectRatio = item.ratio;
+    const cls = ["frame", item.portrait ? "frame--portrait" : "", extra || ""].filter(Boolean).join(" ");
+    return el("figure", { class: cls }, [media]);
+  }
+
+  // First item is the main piece; the rest go in a scrollable carousel; items marked "end" close the gallery
+  function renderGallery(p, alts) {
+    const items = (p.gallery.length ? p.gallery : [{ type: "image", src: p.cover }]).map((item, i) => ({ item, alt: alts[i] }));
+    const [first, ...rest] = items;
+    const middle = rest.filter((x) => !x.item.end);
+    const end = rest.filter((x) => x.item.end);
+    const section = el("section", { class: "project__gallery", attrs: { "aria-label": t("projects.gallery") } });
+    section.appendChild(galleryFrame(p, first.item, first.alt, "frame--featured"));
+    if (middle.length === 1) section.appendChild(galleryFrame(p, middle[0].item, middle[0].alt));
+    if (middle.length > 1) section.appendChild(renderCarousel(p, middle));
+    end.forEach((x) => section.appendChild(galleryFrame(p, x.item, x.alt, "frame--end")));
+    return section;
+  }
+
+  function renderCarousel(p, list) {
+    const track = el("ul", { class: "carousel__track", attrs: { tabindex: "0", "aria-label": t("projects.carousel") } });
+    list.forEach((x, i) => {
+      const li = el("li", { class: "carousel__slide", attrs: { "aria-label": (i + 1) + " / " + list.length } }, [galleryFrame(p, x.item, x.alt)]);
+      track.appendChild(li);
+    });
+    const prev = el("button", { class: "carousel__btn", text: "\u2190", attrs: { type: "button", "aria-label": t("projects.carouselPrev") } });
+    const next = el("button", { class: "carousel__btn", text: "\u2192", attrs: { type: "button", "aria-label": t("projects.carouselNext") } });
+    const step = (dir) => {
+      const slide = track.querySelector(".carousel__slide");
+      const amount = slide ? slide.getBoundingClientRect().width + 16 : track.clientWidth * 0.8;
+      track.scrollBy({ left: dir * amount, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+    };
+    prev.onclick = () => step(-1);
+    next.onclick = () => step(1);
+    const update = () => {
+      prev.disabled = track.scrollLeft <= 2;
+      next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 2;
+    };
+    track.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+    requestAnimationFrame(update);
+    // Only one clip plays at a time
+    track.addEventListener("play", (e) => track.querySelectorAll("video").forEach((v) => { if (v !== e.target) v.pause(); }), true);
+    return el("div", { class: "carousel", attrs: { role: "region", "aria-roledescription": "carousel", "aria-label": t("projects.carousel") } }, [
+      track,
+      el("div", { class: "carousel__controls" }, [prev, next])
+    ]);
+  }
+
   // Click-to-load playable build: nothing is downloaded (and no camera is requested) until the visitor asks
   function renderEmbed(p) {
     if (!p.embed) return null;
@@ -284,10 +335,7 @@
     ]);
     facts.classList.add("project__facts");
 
-    const gallery = el("section", { class: "project__gallery", attrs: { "aria-label": t("projects.gallery") } });
-    (p.gallery.length ? p.gallery : [{ type: "image", src: p.cover }]).forEach((item, i) => {
-      gallery.appendChild(el("figure", { class: "frame" }, [renderMedia(item, alts[i] || c(p.id, "title"))]));
-    });
+    const gallery = renderGallery(p, alts);
 
     const did = el("ul", { class: "project__did" });
     (c(p.id, "did") || []).filter(ready).forEach((line) => did.appendChild(el("li", { text: line })));
