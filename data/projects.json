@@ -15,12 +15,12 @@
       "WebGL",
       "Git / GitHub Projects"
     ],
-    "cover": "assets/img/projects/mohan-cover.svg",
+    "cover": "assets/img/projects/mohan/title.png",
     "gallery": [
       {
         "type": "image",
-        "src": "assets/img/projects/mohan-cover.svg",
-        "alt": "mohan.gallery.0"
+        "src": "assets/img/projects/mohan/title.png",
+        "ratio": "1920 / 1080"
       }
     ],
     "links": {
@@ -49,16 +49,18 @@
       "WebGL",
       "JavaScript",
       "Hand tracking (ML)",
+      "Teachable Machine",
       "Snapchat AR API",
       "Cloudinary",
+      "3D printing",
       "Vercel"
     ],
-    "cover": "assets/img/projects/espejo-magico-cover.svg",
+    "cover": "assets/img/projects/espejo-magico/title.jpg",
     "gallery": [
       {
         "type": "image",
-        "src": "assets/img/projects/espejo-magico-cover.svg",
-        "alt": "espejo-magico.gallery.0"
+        "src": "assets/img/projects/espejo-magico/title.jpg",
+        "ratio": "1600 / 873"
       }
     ],
     "links": {
@@ -318,30 +320,69 @@
       "web"
     ],
     "tech": [
+      "HTML",
+      "CSS",
       "JavaScript",
-      "Figma"
+      "Information design",
+      "Vercel",
+      "TODO: Figma?"
     ],
-    "cover": "assets/img/projects/infographic-cover.svg",
-    "gallery": [],
+    "cover": "assets/img/projects/infographic/desk.jpg",
+    "gallery": [
+      {
+        "type": "image",
+        "src": "assets/img/projects/infographic/desk.jpg",
+        "ratio": "16 / 9"
+      },
+      {
+        "type": "image",
+        "src": "assets/img/projects/infographic/world-map.jpg",
+        "ratio": "16 / 9"
+      }
+    ],
     "links": {
       "play": null,
       "code": null,
       "video": null,
-      "live": null,
+      "live": "https://designhandofflotoinfografico.vercel.app/Escritorio%20Detective.html",
       "itch": null,
       "web": null
+    },
+    "embed": {
+      "url": "https://designhandofflotoinfografico.vercel.app/Escritorio%20Detective.html",
+      "allow": "autoplay; fullscreen",
+      "size": "~11 MB"
     }
   },
   {
     "id": "design-system",
     "draft": true,
-    "year": "",
+    "year": "2024",
     "platform": [],
     "tech": [
-      "Figma"
+      "Figma",
+      "FigJam",
+      "Design sprint",
+      "Usability testing"
     ],
-    "cover": "assets/img/projects/design-system-cover.svg",
-    "gallery": [],
+    "cover": "assets/img/projects/teams/coworking.jpg",
+    "gallery": [
+      {
+        "type": "image",
+        "src": "assets/img/projects/teams/coworking.jpg",
+        "ratio": "976 / 549"
+      },
+      {
+        "type": "image",
+        "src": "assets/img/projects/teams/apps-store.jpg",
+        "ratio": "1009 / 568"
+      },
+      {
+        "type": "image",
+        "src": "assets/img/projects/teams/challenge.jpg",
+        "ratio": "2400 / 314"
+      }
+    ],
     "links": {
       "play": null,
       "itch": null,

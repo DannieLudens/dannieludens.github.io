@@ -200,7 +200,7 @@
         }
       ],
       "gallery": [
-        "Title screen of El Silbido del Mohán (placeholder until screenshots are added)"
+        "Title screen of El Silbido del Mohán: pixel art of a fisherman in a yellow raincoat rowing a canoe at sunset, with ruins on the horizon."
       ],
       "ai": [
         "I worked with Claude as a tutor and pair programmer. It explained techniques such as coyote time and jump buffering, suggested ways to structure the systems and reviewed my code. I built the mechanics step by step with that guidance, and I know what every line does and why it's there.",
@@ -217,33 +217,77 @@
       "title": "Espejo Mágico",
       "subtitle": "Magic Mirror for the Telemedellín tour",
       "pitch": "An interactive mirror for the Telemedellín studio tour. Visitors control it with hand gestures, try on AR filters and take their photo home with a QR code.",
-      "role": "Interactive experience designer and technology integrator",
-      "team": "6 people: 4 in animation, 2 in interactive experiences",
+      "role": "UX/UI, integration, computer vision and programming",
+      "team": "Six people: four from animation and two from interactive experiences",
       "when": "Jan to May 2026",
-      "context": "Final project of Workshop 7, the course that brings together the whole Digital Entertainment Design Engineering program at UPB. It won the program's highest recognition, voted by the faculty jury at the DEX 2026-1 awards.",
+      "context": "Final project of Workshop 7, the course that brings together the whole Digital Entertainment Design Engineering program at UPB, with a real client: Telemedellín invited us to renew part of its museum tour. In our visits we saw that the makeup for film and TV exhibit was practically invisible: 70 to 80% of visitors walked past it, and the infographic went unread. Espejo Mágico turns it into a mirror you control with your hands, where four of the channel's presenters show how they are made up for the screen, and makeup is presented as part of the job for men and women alike. It won the program's highest recognition, voted by the faculty jury at the DEX 2026-1 awards.",
       "did": [
         "Designed the visitor experience, from the first gesture in front of the mirror to the photo they take home.",
         "Integrated machine learning hand tracking so visitors control the mirror without touching anything.",
-        "Connected Snapchat's AR API to apply the filters, and Cloudinary to store each photo and deliver it through a QR code.",
+        "Trained an object recognition model with Teachable Machine so the camera identifies 3D-printed makeup tools (a lipstick, a brush and others) and starts the matching presenter's animated sequence.",
+        "3D printed those makeup tools from the models made by the animation team.",
+        "Connected Snapchat's AR API to apply the makeup filters, and Cloudinary to store each photo and deliver it through a QR code.",
         "Built and maintained both versions of the experience, one in Unity and one for the web."
       ],
       "challenges": [
         {
-          "title": "TODO: Daniel, add the hardest problem in this project",
-          "body": "TODO: One short paragraph: what went wrong or was hard (for example, gesture detection under the studio's lighting, or syncing the photo with Cloudinary before showing the QR), what you tried and what worked."
+          "title": "Recognizing objects in real lighting",
+          "body": "The model confused objects when the light changed or the background wasn't uniform. We reduced the errors by retraining it with more examples and controlling the lighting around the mirror, although it never became perfect in the time we had."
+        },
+        {
+          "title": "Performance, and moving from an app to the web",
+          "body": "The animations and audio made the project heavy, and the original plan of shipping a Unity APK ran into technical problems. We moved the experience to a web version and baked the audio into the renders to simplify playback. The change paid off: the browser let us build the mirror surface that ripples like mercury when you move your hand."
+        },
+        {
+          "title": "What 11 user tests changed",
+          "body": "Testers loved that the mirror reacts to them without touching anything and that the printed objects trigger the content, but the pinch gesture to choose a presenter wasn't intuitive. We redesigned the gesture instructions and added Telemedellín's identity (logo, colors and references to the channel) to the interface."
         }
       ],
       "gallery": [
-        "Espejo Mágico experience (placeholder until screenshots are added)"
+        "Start screen of Espejo Mágico: the four animated presenters on a TV set behind a mirror frame lined with light bulbs, with the Telemedellín logo."
       ],
       "ai": [
-        "TODO: Did you use AI tools in this project (for code, research, the ML hand tracking setup)? Say what they did and what you did. If you didn't, write: \"No AI tools were used to build this project.\""
+        "Recognizing the makeup tools is itself an AI model, which I trained with Teachable Machine on examples of the 3D-printed objects. The background music was generated with AI, and the voice-over was recorded by UPB's voice team.",
+        "I also worked with an AI assistant as a guide while connecting the APIs (hand tracking, Snapchat's AR API and Cloudinary): it helped me understand how each integration works so I could build it and get it running myself."
       ],
       "embed": {
         "button": "Try Espejo Mágico (camera required)",
         "note": "Works best on a computer with Chrome or Edge and a camera. Make a pinch gesture to move forward. Keys: N opens the presenters menu, M goes back to the mirror.",
         "size": "Loads about 45 MB and asks for camera access only after you click."
-      }
+      },
+      "credits": [
+        {
+          "before": "Concept art, 3D modeling, animation and render: ",
+          "name": "Juana Vargas Ossa",
+          "after": "."
+        },
+        {
+          "before": "Texturing, sets, render and rigging: ",
+          "name": "David Vanegas Londoño",
+          "after": "."
+        },
+        {
+          "before": "Animation, props and texturing: ",
+          "name": "Tomás Mejía Murillo",
+          "after": "."
+        },
+        {
+          "before": "3D modeling, animation, props and rigging: ",
+          "name": "Jhohan Nicolás Sedano Correa",
+          "after": "."
+        },
+        {
+          "before": "Music, sound effects and script: ",
+          "name": "Jorge Luis Suarique Agudelo",
+          "after": "."
+        },
+        {
+          "before": "Course taught by professors Edwin Adolfo Hernández Pachón, Andrea González Moreno and ",
+          "name": "Roberto Estupiñán",
+          "url": "https://www.linkedin.com/in/donrober/",
+          "after": "."
+        }
+      ]
     },
     "vr-apartment": {
       "title": "VR Apartment",
@@ -302,26 +346,44 @@
       ]
     },
     "infographic": {
-      "title": "Interactive infographic",
-      "subtitle": "TODO: Topic of the infographic",
-      "pitch": "TODO: One sentence about what the infographic explains and how people interact with it.",
-      "role": "TODO",
-      "team": "TODO",
-      "when": "TODO",
-      "context": "TODO: Course at UPB and goal of the project.",
+      "title": "LOTO: the detective's desk",
+      "subtitle": "An interactive web infographic set in a sci-fi Medellín",
+      "pitch": "A detective's desk in Ciudad-7, the Aburrá Valley in the year 2114. Click the objects on it (a corkboard, a map, a notebook, a CRT monitor, a case file and a robot) to explore the characters, the city's data and the case of a missing citizen.",
+      "role": "Solo project: concept, information design and web development",
+      "team": "Individual project",
+      "when": "2026",
+      "context": "Visualization and Information Design course at UPB. The goal was an infographic that people explore instead of read: the information about the LOTO narrative universe lives in the objects of a detective's desk, and each object opens a section in a split view next to the desk.",
       "did": [
-        "TODO"
+        "Designed the desk as the infographic's navigation: six objects, six sections (the world, the characters, the story, the data, the case and a spherical robot).",
+        "Visualized the city's data: a map of five sectors you can switch between percentage of implants, income and crime, with a ranking and a detail card for each sector, and a monitor that compares crime with implants.",
+        "Built it for the web and published it, with an ambient music player on the desk.",
+        "TODO: Tools you used (Figma? HTML/CSS/JS by hand? a framework?) and anything else you did"
       ],
       "challenges": [
         {
-          "title": "TODO",
+          "title": "TODO: Hardest problem",
           "body": "TODO"
         }
       ],
-      "gallery": [],
       "ai": [
         "TODO: What AI tools did, and what you did. If none: \"No AI tools were used to build this project.\""
-      ]
+      ],
+      "gallery": [
+        "The detective's desk at night: a corkboard with character photos, a city map, a notebook, a classified case file, a CRT monitor with data, a desk lamp and a glowing spherical robot.",
+        "The world section: a map of Ciudad-7 divided into five sectors and colored by percentage of implants, with a ranking of the sectors next to it."
+      ],
+      "credits": [
+        {
+          "before": "Course taught by professor ",
+          "name": "Hernán D. Franco Higuita",
+          "after": "."
+        }
+      ],
+      "embed": {
+        "button": "Explore LOTO",
+        "note": "Works best on a computer. Click the objects on the desk to open each section.",
+        "size": "Loads about 11 MB, only after you click."
+      }
     },
     "ar-card": {
       "title": "AR Business Card",
@@ -446,26 +508,34 @@
       ]
     },
     "design-system": {
-      "title": "Design system for Microsoft Teams",
-      "subtitle": "UI/UX case study: a design system for Microsoft Teams, made in Figma",
-      "pitch": "TODO: One sentence about the problem and what the design system covers.",
-      "role": "TODO",
-      "team": "TODO",
-      "when": "TODO",
-      "context": "UX/UI course at UPB. TODO: Was it a redesign or a design system for a new feature? What problem did it solve?",
+      "title": "Microsoft Teams redesign",
+      "subtitle": "A design sprint to bring real-time teamwork into Microsoft Teams",
+      "pitch": "Students only opened Teams when a professor required it and moved to Discord, Figma or Miro to actually work together. We redesigned Teams around a \"Coworking\" space where a team pins its boards and apps and starts working in real time.",
+      "role": "TODO: Your role in the team",
+      "team": "TODO: Team size (UX/UI Team 18)",
+      "when": "2024",
+      "context": "UX/UI course at UPB, run as a design sprint around one question: how could Teams give us tools to work in real time, as a team? Every student in our survey used Teams for school, but most rarely used it for teamwork and preferred Discord, Figma, Miro or WhatsApp. They found it unintuitive, couldn't tell what its integrations were for, and missed shared boards they could edit at the same time.",
       "did": [
-        "TODO"
+        "Ran the Understand phase: a survey and interviews, quantitative and qualitative insights, affinity clustering and \"How might we\" questions.",
+        "Defined the target, the design principles, a risk map and an assumptions map, and set the product's personality.",
+        "Mapped the user flows and designed the redesign: a Coworking channel with pinned boards, app groups and a one-click way to start a coworking session, plus an apps store with tutorials for each integration.",
+        "Wrote the usability test script with tasks such as pinning an app, creating a Coworking zone and finding the monthly updates, ran the tests and turned the errors into hotfixes.",
+        "TODO: What you did specifically"
       ],
       "challenges": [
         {
-          "title": "TODO",
-          "body": "TODO"
+          "title": "What the usability tests changed",
+          "body": "Testers knew how to see more information about an app, but several didn't know how to add a new app to a group (their first move was to go back), confused the bell with the newspaper icon for updates, and didn't realize they could scroll. We fixed those points in a round of hotfixes and compared each screen before and after. TODO: Confirm or add your own words."
         }
       ],
       "ai": [
         "TODO: What AI tools did, and what you did. If none: \"No AI tools were used to build this project.\""
       ],
-      "gallery": []
+      "gallery": [
+        "Redesigned Coworking channel in Teams: pinned Figma and Miro boards, app groups for developers and designers, and a \"Start a new coworking\" button.",
+        "Redesigned apps store: each integration shows a Tutorials button next to Add, so students learn what it is for before installing it.",
+        "The sprint's challenge question: How could Teams give us tools to work in real time, as a team?"
+      ]
     },
     "gimmy": {
       "title": "Gimmy",
