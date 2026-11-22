@@ -163,14 +163,34 @@
   {
     "id": "semana-santa",
     "draft": true,
-    "year": "",
-    "platform": [],
-    "tech": [
-      "Unity",
-      "TODO"
+    "year": "2025",
+    "platform": [
+      "windows"
     ],
-    "cover": "assets/img/projects/semana-santa-cover.svg",
-    "gallery": [],
+    "tech": [
+      "Unity 6 (URP)",
+      "C#",
+      "Timeline",
+      "Cinemachine",
+      "Video Player",
+      "Blender"
+    ],
+    "cover": "assets/img/projects/semana-santa/facade.jpg",
+    "gallery": [
+      {
+        "type": "video",
+        "src": "assets/video/semana-santa-teaser.mp4",
+        "poster": "assets/img/projects/semana-santa/facade.jpg"
+      },
+      {
+        "type": "image",
+        "src": "assets/img/projects/semana-santa/fountain.jpg"
+      },
+      {
+        "type": "image",
+        "src": "assets/img/projects/semana-santa/altar.jpg"
+      }
+    ],
     "links": {
       "play": null,
       "itch": null,
