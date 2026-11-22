@@ -109,15 +109,18 @@
       "vr"
     ],
     "tech": [
-      "Unity",
-      "C#",
-      "XR"
+      "Unity 6 (URP)",
+      "Meta XR SDK (Interaction SDK)",
+      "OpenXR",
+      "AI Navigation",
+      "Meta Quest",
+      "Android"
     ],
     "cover": "assets/img/projects/vr-apartment-cover.svg",
     "gallery": [],
     "links": {
       "play": null,
-      "code": null,
+      "code": "https://gitlab.com/DannieLudens/vrar_a3_parcial_de_vr_apartaestudiointeractivo",
       "video": null,
       "live": null,
       "itch": null,

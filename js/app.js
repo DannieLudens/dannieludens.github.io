@@ -251,6 +251,17 @@
     ]);
   }
 
+  // Credits with a link, e.g. "Course taught by professor <a>Name</a>."
+  function renderCredits(p) {
+    return (c(p.id, "credits") || []).filter((cr) => cr && cr.name).map((cr) =>
+      el("p", { class: "project__credit" }, [
+        document.createTextNode(cr.before || ""),
+        cr.url ? el("a", { text: cr.name, attrs: { href: cr.url, rel: "noopener" } }) : document.createTextNode(cr.name),
+        document.createTextNode(cr.after || "")
+      ])
+    );
+  }
+
   function renderProject(p) {
     const view = document.getElementById("project-view");
     const list = visibleProjects();
@@ -294,7 +305,7 @@
       : null;
 
     const body = el("div", { class: "project__body" }, [
-      ready(c(p.id, "context")) ? el("section", {}, [el("h2", { text: t("projects.context") }), el("p", { text: c(p.id, "context") })]) : null,
+      ready(c(p.id, "context")) ? el("section", {}, [el("h2", { text: t("projects.context") }), el("p", { text: c(p.id, "context") }), ...renderCredits(p)]) : null,
       did.childElementCount ? el("section", {}, [el("h2", { text: t("projects.did") }), did]) : null,
       challengeList.length ? el("section", {}, [el("h2", { text: t("projects.challenges") }), challenges]) : null,
       ai

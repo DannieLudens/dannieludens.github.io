@@ -243,24 +243,58 @@
     },
     "vr-apartment": {
       "title": "VR Apartment",
-      "subtitle": "Interactive studio apartment in VR",
-      "pitch": "A studio apartment in VR where you can reach out and use the objects around you.",
-      "role": "TODO: Solo developer?",
-      "team": "TODO: Individual project?",
-      "when": "TODO: Semester",
-      "context": "TODO: Midterm project for the VR/AR course at UPB, improved after delivery.",
+      "subtitle": "A studio apartment you can walk around and touch in VR",
+      "pitch": "Put on a Meta Quest headset, teleport around a furnished studio apartment, open its doors and drawers, and pick up everyday objects with your hands.",
+      "role": "Co-developer: we worked as a pair on every part of the project",
+      "team": "Pair project with María Paulina Serna Alzate. We built it together, most of the time at the same computer.",
+      "when": "Mar to Apr 2026",
+      "context": "Midterm project for the VR and AR course at UPB: take a ready-made apartment and turn it into a space you can explore and use in VR. The architecture and furniture come from a free Asset Store pack; our work was making it interactive.",
       "did": [
-        "TODO: List the interactions (grab, open, switch on) and what you fixed in the new version."
+        "Set up a Unity 6 (URP) project for Meta Quest with OpenXR and the Meta XR SDK, built for Android and tested on Quest 2, Quest 3S and Quest 3.",
+        "Cleaned up the apartment model: removed duplicate objects and joined loose parts, like drawers split into separate pieces, into prefabs that could become interactive.",
+        "Used Meta Interaction SDK building blocks for hand grab and touch grab, so you pick objects up with your own hands.",
+        "Made 15 everyday objects grabbable, including the TV remote, cutlery, plates, a cutting board, a lamp, a laptop, a magazine and photo frames.",
+        "Added doors that swing on their hinges when you push them and kitchen drawers that slide out, using angular and linear movement limits.",
+        "Placed teleport points around the apartment and fixed the NavMesh so teleporting lands only where you can stand.",
+        "Fitted colliders room by room (walls, bathroom, kitchen, dining room) and enabled GPU instancing to keep the headset running smoothly."
       ],
       "challenges": [
         {
-          "title": "TODO",
-          "body": "TODO"
+          "title": "Making a ready-made model interactive",
+          "body": "The apartment model wasn't optimized for interaction. It had duplicate objects, and things like drawers came as loose individual parts. We took the time to clean up the duplicates and join each piece into a single prefab before we could make anything interactive."
+        },
+        {
+          "title": "Physics that feels right in your hands",
+          "body": "Choosing between kinematic and physics-driven objects, and getting doors to rotate naturally when you push them with your hands, took a lot of testing. Each grabbable object also needed several colliders fitted to its shape so the grab matched what you see."
+        },
+        {
+          "title": "Two people, one Unity scene",
+          "body": "A Git merge conflict in the shared scene almost cost us the project. We recovered by duplicating the scene and agreeing that each of us would work on different objects, never the same ones at the same time. It taught us to plan who touches what before opening the scene."
         }
       ],
       "gallery": [],
       "ai": [
-        "TODO: What AI tools did, and what you did. If none: \"No AI tools were used to build this project.\""
+        "No AI tools were used to build this project."
+      ],
+      "credits": [
+        {
+          "before": "Made together with ",
+          "name": "María Paulina Serna Alzate",
+          "url": "https://www.linkedin.com/in/maria-paulina-serna-alzate-98337831b",
+          "after": "."
+        },
+        {
+          "before": "Course taught by professor ",
+          "name": "Roberto Estupiñán",
+          "url": "https://www.linkedin.com/in/donrober/",
+          "after": "."
+        },
+        {
+          "before": "Apartment and furniture: ",
+          "name": "DevDen ArchViz Vol. 1 – Scotland (URP)",
+          "url": "https://assetstore.unity.com/packages/3d/environments/urban/devden-archviz-vol-1-scotland-urp-204933",
+          "after": " by DevDen Solutions, from the Unity Asset Store."
+        }
       ]
     },
     "infographic": {
@@ -290,26 +324,35 @@
       "subtitle": "My first steps in AR: a business card that comes alive",
       "pitch": "Point your phone at a printed business card and a 3D version of me appears on it, waves hello and links to my profiles, with a video playing beside it.",
       "role": "Solo developer: AR setup, interactions, 3D buttons and Android build",
-      "team": "TODO: Individual project? (only your commits in the repo)",
+      "team": "Individual project",
       "when": "Jan to Mar 2026",
-      "context": "First assignment (\"Mis primeros pasos\") of the VR and AR course at UPB: a marker-based AR experience in Unity with Vuforia. The avatar was made with Ready Player Me and its animations come from Mixamo.",
+      "context": "First assignment (\"Mis primeros pasos\") of the VR and AR course at UPB: a marker-based AR experience in Unity with Vuforia.",
       "did": [
         "Set up a Unity 6 (URP) project with Vuforia Engine 11 and ARCore, and created image targets for the front and the back of the card.",
-        "Placed my 3D avatar on the card with idle and waving animations. Tapping it triggers a run-and-flip animation.",
+        "Created my 3D character with Ready Player Me and animated it with Mixamo. Along the way I also explored Avaturn and Blender as other ways to build and prepare the character.",
+        "Placed the avatar on the card with idle and waving animations. Tapping it triggers a run-and-flip animation.",
         "Added 3D GitHub, LinkedIn and Instagram icons that open my profiles when tapped.",
         "Modeled play and pause buttons in Blender to control a video that plays on the card.",
         "Built and tested the Android app."
       ],
       "challenges": [
         {
-          "title": "TODO: Hardest problem",
-          "body": "TODO: For example, making taps work on 3D objects in AR, getting the card to track steadily, or the Vuforia and ARCore setup. What failed, what you tried and what worked."
+          "title": "Getting the card to track steadily",
+          "body": "The hardest part was making the phone recognize the card reliably. Vuforia rates each image target with stars according to how many distinct features the camera can find. Following Vuforia's documentation, I adjusted the card artwork toward more organic shapes and more corners, which give the camera more points to hold on to, and checked every version against that rating in Vuforia's Target Manager until the card tracked well on the phone."
         }
       ],
       "ai": [
-        "TODO: What AI tools did, and what you did. If none: \"No AI tools were used to build this project.\""
+        "No AI tools were used to build this project."
       ],
-      "gallery": []
+      "gallery": [],
+      "credits": [
+        {
+          "before": "Course taught by professor ",
+          "name": "Roberto Estupiñán",
+          "url": "https://www.linkedin.com/in/donrober/",
+          "after": "."
+        }
+      ]
     },
     "voces": {
       "title": "Voces – Objects That Speak",
