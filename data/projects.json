@@ -83,15 +83,18 @@
       "ar"
     ],
     "tech": [
-      "Unity",
+      "Unity 6 (URP)",
       "C#",
-      "AR"
+      "Vuforia Engine 11",
+      "ARCore",
+      "Blender",
+      "Android"
     ],
     "cover": "assets/img/projects/ar-card-cover.svg",
     "gallery": [],
     "links": {
       "play": null,
-      "code": null,
+      "code": "https://gitlab.com/DannieLudens/vrar_a1_presentation_card_in_ar",
       "video": null,
       "live": null,
       "itch": null,

@@ -287,25 +287,29 @@
     },
     "ar-card": {
       "title": "AR Business Card",
-      "subtitle": "TODO: What appears when you scan the card",
-      "pitch": "TODO: One sentence about what appears when you point your phone at the card.",
-      "role": "TODO",
-      "team": "TODO",
-      "when": "TODO",
-      "context": "TODO: Course at UPB and goal of the project.",
+      "subtitle": "My first steps in AR: a business card that comes alive",
+      "pitch": "Point your phone at a printed business card and a 3D version of me appears on it, waves hello and links to my profiles, with a video playing beside it.",
+      "role": "Solo developer: AR setup, interactions, 3D buttons and Android build",
+      "team": "TODO: Individual project? (only your commits in the repo)",
+      "when": "Jan to Mar 2026",
+      "context": "First assignment (\"Mis primeros pasos\") of the VR and AR course at UPB: a marker-based AR experience in Unity with Vuforia. The avatar was made with Ready Player Me and its animations come from Mixamo.",
       "did": [
-        "TODO"
+        "Set up a Unity 6 (URP) project with Vuforia Engine 11 and ARCore, and created image targets for the front and the back of the card.",
+        "Placed my 3D avatar on the card with idle and waving animations. Tapping it triggers a run-and-flip animation.",
+        "Added 3D GitHub, LinkedIn and Instagram icons that open my profiles when tapped.",
+        "Modeled play and pause buttons in Blender to control a video that plays on the card.",
+        "Built and tested the Android app."
       ],
       "challenges": [
         {
-          "title": "TODO",
-          "body": "TODO"
+          "title": "TODO: Hardest problem",
+          "body": "TODO: For example, making taps work on 3D objects in AR, getting the card to track steadily, or the Vuforia and ARCore setup. What failed, what you tried and what worked."
         }
       ],
-      "gallery": [],
       "ai": [
         "TODO: What AI tools did, and what you did. If none: \"No AI tools were used to build this project.\""
-      ]
+      ],
+      "gallery": []
     },
     "voces": {
       "title": "Voces – Objects That Speak",
