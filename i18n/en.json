@@ -483,8 +483,12 @@
       ],
       "challenges": [
         {
-          "title": "TODO: Hardest problem",
-          "body": "TODO"
+          "title": "Putting numbers on something that doesn't exist yet",
+          "body": "The hardest part was projecting the costs and the budget: what the team, the components and the launch would need, all as estimates for a product nobody had built. We had to back each figure with research and accept that the plan would change once real prices came in."
+        },
+        {
+          "title": "From concept to a working device",
+          "body": "Making Gimmy real would mean electronics that read each rep and send it reliably to the phone. The course didn't ask us to build it, but we got closer than required: I 3D printed every proposal so we could hold the shape in our hands. It remains a project we could try to build in the future."
         }
       ],
       "ai": [
