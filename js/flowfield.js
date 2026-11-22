@@ -41,8 +41,9 @@
   // TRAIL = points kept per particle (one every RECORD_EVERY frames), BUCKETS = fade steps along the trail
   const SCALE = 0.0022, SPEED = 0.45, Z_STEP = 0.0005, TRAIL = 34, RECORD_EVERY = 3, BUCKETS = 6, DENSITY = 240;
 
-  function FlowField(canvas) {
+  function FlowField(canvas, avoidEl) {
     this.canvas = canvas;
+    this.avoidEl = avoidEl || null; // the lockup: particles flow around it
     this.ctx = canvas.getContext("2d");
     this.running = false;
     this.visible = true;
@@ -60,6 +61,7 @@
     this.canvas.width = this.w * dpr;
     this.canvas.height = this.h * dpr;
     this.ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    this.measureAvoid();
     // About 1 particle per DENSITY px², capped for phones and big screens
     const count = Math.round(Math.min(2600, Math.max(450, (this.w * this.h) / DENSITY)));
     this.particles = [];
@@ -75,9 +77,30 @@
     this.draw();
   };
 
+  // Ellipse around the lockup, in canvas coordinates
+  FlowField.prototype.measureAvoid = function () {
+    this.avoid = null;
+    if (!this.avoidEl) return;
+    const c = this.canvas.getBoundingClientRect();
+    const kids = this.avoidEl.querySelectorAll(".hero__caption-lead, .hero__lockup");
+    if (!kids.length) return;
+    let l = Infinity, t = Infinity, r = -Infinity, b = -Infinity;
+    kids.forEach((k) => { const q = k.getBoundingClientRect(); l = Math.min(l, q.left); t = Math.min(t, q.top); r = Math.max(r, q.right); b = Math.max(b, q.bottom); });
+    if (!isFinite(l) || r <= l) return;
+    this.avoid = { cx: (l + r) / 2 - c.left, cy: (t + b) / 2 - c.top, rx: (r - l) / 2 + 28, ry: (b - t) / 2 + 22 };
+  };
+
+  // Distance inside the avoid ellipse: < 1 means inside
+  FlowField.prototype.inAvoid = function (x, y) {
+    const a = this.avoid; if (!a) return 9;
+    const dx = (x - a.cx) / a.rx, dy = (y - a.cy) / a.ry;
+    return dx * dx + dy * dy;
+  };
+
   // (Re)starts a particle at a random point with an empty trail
   FlowField.prototype.spawn = function (p) {
-    const x = Math.random() * this.w, y = Math.random() * this.h;
+    let x = Math.random() * this.w, y = Math.random() * this.h, tries = 0;
+    while (this.inAvoid(x, y) < 1.15 && tries++ < 8) { x = Math.random() * this.w; y = Math.random() * this.h; }
     p.hx.fill(x); p.hy.fill(y);
     p.head = 0; p.x = x; p.y = y;
     p.life = 200 + Math.random() * 500;
@@ -88,7 +111,17 @@
   FlowField.prototype.move = function () {
     for (const p of this.particles) {
       const a = noise(p.x * SCALE, p.y * SCALE, this.z) * Math.PI * 3;
-      p.x += Math.cos(a) * SPEED; p.y += Math.sin(a) * SPEED;
+      let vx = Math.cos(a), vy = Math.sin(a);
+      const d2 = this.inAvoid(p.x, p.y);
+      if (d2 < 1.6) {
+        // Near the navigator: bend the path outward so the flow goes around it
+        const av = this.avoid, k = (1.6 - d2) * 2.2;
+        const ox = (p.x - av.cx) / (av.rx * av.rx), oy = (p.y - av.cy) / (av.ry * av.ry);
+        const ol = Math.hypot(ox, oy) || 1;
+        vx += (ox / ol) * k; vy += (oy / ol) * k;
+        const vl = Math.hypot(vx, vy) || 1; vx /= vl; vy /= vl;
+      }
+      p.x += vx * SPEED; p.y += vy * SPEED;
       p.life -= 1;
       if (p.x < -2 || p.x > this.w + 2 || p.y < -2 || p.y > this.h + 2 || p.life <= 0) { this.spawn(p); continue; }
       if (this.frame % RECORD_EVERY === 0) {
@@ -164,9 +197,9 @@
   };
 
   window.FlowField = {
-    mount(canvas) {
+    mount(canvas, avoidEl) {
       if (!canvas || !canvas.getContext) return null;
-      return new FlowField(canvas);
+      return new FlowField(canvas, avoidEl);
     }
   };
 })();

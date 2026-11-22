@@ -83,9 +83,15 @@
           <div class="hero__canvas">
             <canvas id="flow-field" role="img" data-i18n-aria="hero.frameLabel"></canvas>
           </div>
+          <!-- Brand lockup: the navigator (logo) sits between order and chaos -->
           <figcaption class="hero__caption">
-            <svg class="hero__caption-logo" aria-hidden="true" focusable="false"><use href="#logo"/></svg>
-            <span data-i18n="hero.tagline">Navigating between order and chaos.</span>
+            <span class="hero__caption-lead" data-i18n="hero.taglineLead">Navigating between</span>
+            <span class="hero__lockup">
+              <span class="hero__lockup-word hero__lockup-word--order" data-i18n="hero.taglineOrder">order</span>
+              <svg class="hero__caption-logo" aria-hidden="true" focusable="false"><use href="#logo"/></svg>
+              <span class="visually-hidden" data-i18n="hero.taglineAnd"> and </span>
+              <span class="hero__lockup-word hero__lockup-word--chaos" data-i18n="hero.taglineChaos">chaos</span>
+            </span>
           </figcaption>
         </figure>
       </section>

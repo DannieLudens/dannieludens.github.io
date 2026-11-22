@@ -375,7 +375,7 @@
       projects = await loadJson("data/projects.json");
       await window.I18N.init(site);
       renderAll();
-      if (window.FlowField) window.FlowField.mount(document.getElementById("flow-field"));
+      if (window.FlowField) window.FlowField.mount(document.getElementById("flow-field"), document.querySelector(".hero__caption"));
       document.documentElement.classList.add("is-ready");
       window.addEventListener("hashchange", route);
     } catch (err) {

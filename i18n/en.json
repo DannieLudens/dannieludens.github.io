@@ -21,8 +21,11 @@
     "intro": "I take ideas from sketch to something people can play, touch and walk around in. Based in Medellín, Colombia, and open to junior roles in Unity, XR and QA.",
     "ctaProjects": "See projects",
     "ctaResume": "Download resume",
-    "tagline": "Navigating between order and chaos.",
-    "frameLabel": "Generative flow field: thousands of particles in my brand colors drift through a field of forces that keeps changing."
+    "frameLabel": "Generative flow field: thousands of particles in my brand colors drift through a field of forces that keeps changing.",
+    "taglineLead": "Navigating between",
+    "taglineOrder": "order",
+    "taglineAnd": " and ",
+    "taglineChaos": "chaos"
   },
   "projects": {
     "heading": "Projects",
