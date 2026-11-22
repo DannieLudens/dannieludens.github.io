@@ -341,31 +341,26 @@
     }
   }
 
-  // ---------- hero floor (perspective grid) ----------
-
-  function drawFloor() {
-    const g = document.getElementById("floor");
-    if (!g || g.childElementCount) return;
-    const ns = "http://www.w3.org/2000/svg";
-    const horizon = 300, bottom = 520, vx = 300;
-    for (let i = -10; i <= 10; i++) {
-      const line = document.createElementNS(ns, "line");
-      line.setAttribute("x1", vx + i * 12); line.setAttribute("y1", horizon);
-      line.setAttribute("x2", vx + i * 90); line.setAttribute("y2", bottom);
-      g.appendChild(line);
-    }
-    for (let k = 1; k <= 7; k++) {
-      const y = horizon + (bottom - horizon) * Math.pow(k / 7, 1.8);
-      const line = document.createElementNS(ns, "line");
-      line.setAttribute("x1", 0); line.setAttribute("y1", y.toFixed(1));
-      line.setAttribute("x2", 600); line.setAttribute("y2", y.toFixed(1));
-      g.appendChild(line);
-    }
+  // Light / dark mode: saved choice wins, otherwise follow the system
+  function currentTheme() { return document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light"; }
+  function renderThemeToggle() {
+    const btn = document.getElementById("theme-toggle");
+    if (!btn) return;
+    const label = currentTheme() === "dark" ? t("nav.themeToLight") : t("nav.themeToDark");
+    btn.setAttribute("aria-label", label);
+    btn.title = label;
+    btn.onclick = () => {
+      const next = currentTheme() === "dark" ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", next);
+      try { localStorage.setItem("portfolio-theme", next); } catch (e) { /* storage blocked: ignore */ }
+      renderThemeToggle();
+    };
   }
 
   function renderAll() {
     window.I18N.apply();
     renderLanguageSwitch();
+    renderThemeToggle();
     renderProjectList();
     renderQa();
     renderAbout();
@@ -379,8 +374,8 @@
       site = await loadJson("data/site.json");
       projects = await loadJson("data/projects.json");
       await window.I18N.init(site);
-      drawFloor();
       renderAll();
+      if (window.FlowField) window.FlowField.mount(document.getElementById("flow-field"));
       document.documentElement.classList.add("is-ready");
       window.addEventListener("hashchange", route);
     } catch (err) {

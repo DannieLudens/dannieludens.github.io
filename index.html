@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,18 +7,44 @@
   <meta name="description" content="Portfolio of Daniel Ardila, a Unity developer from Medellín, Colombia, building games and AR/VR experiences.">
   <meta property="og:title" content="Daniel Ardila | Unity developer, AR and VR">
   <meta property="og:description" content="Games and AR/VR experiences built in Unity.">
+  <meta name="color-scheme" content="light dark">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <script>
+    // Pick the theme before the page paints: saved choice, then the system setting
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem("portfolio-theme"); } catch (e) {}
+      if (t !== "light" && t !== "dark") t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", t);
+    })();
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@200;300;500;600;700&display=swap">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
   <a class="skip-link" href="#main" data-i18n="nav.skip">Skip to content</a>
 
+  <!-- Brand mark, reused across the page with <use href="#logo"> -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="logo" viewBox="0 0 344 222">
+      <g fill="none" stroke="currentColor" stroke-width="10" stroke-linejoin="round">
+        <path d="M8.72 191.59 L160.51 10.69 A15 15 0 0 1 183.49 10.69 L335.28 191.59 A15 15 0 0 1 317.45 214.82 L172 147 L26.55 214.82 A15 15 0 0 1 8.72 191.59 Z"/>
+        <path d="M138.44 37 H205.56 M47 145.97 V205.29 M297 145.97 V205.29"/>
+      </g>
+    </symbol>
+    <symbol id="logo-small" viewBox="0 0 351 229">
+      <path d="M12.22 195.09 L164.01 14.19 A15 15 0 0 1 186.99 14.19 L338.78 195.09 A15 15 0 0 1 320.95 218.32 L175.5 150.5 L30.05 218.32 A15 15 0 0 1 12.22 195.09 Z" fill="none" stroke="currentColor" stroke-width="17" stroke-linejoin="round"/>
+    </symbol>
+  </svg>
+
   <header class="site-header">
     <nav class="nav" aria-label="Main">
-      <a class="nav__home" href="#top" data-i18n="nav.home">Daniel Ardila</a>
+      <a class="nav__home" href="#top">
+        <svg class="nav__logo" aria-hidden="true" focusable="false"><use href="#logo-small"/></svg>
+        <span data-i18n="nav.home">Daniel Ardila</span>
+      </a>
       <ul class="nav__links">
         <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
         <li id="nav-qa" hidden><a href="#qa" data-i18n="nav.qa">QA</a></li>
@@ -26,8 +52,14 @@
         <li><a href="#resume" data-i18n="nav.resume">Resume</a></li>
         <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
       </ul>
-      <div class="lang" id="lang-switch" hidden>
-        <span class="visually-hidden" data-i18n="nav.language">Language</span>
+      <div class="nav__tools">
+        <div class="lang" id="lang-switch" hidden>
+          <span class="visually-hidden" data-i18n="nav.language">Language</span>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" type="button">
+          <svg class="theme-toggle__sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M4.6 19.4l2.1-2.1M17.3 6.7l2.1-2.1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <svg class="theme-toggle__moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        </button>
       </div>
     </nav>
   </header>
@@ -37,44 +69,24 @@
     <div id="home-view">
       <section class="hero" id="top" aria-labelledby="hero-name">
         <div class="hero__text">
-          <div class="lock" id="lock">
-            <h1 class="hero__name" id="hero-name" data-i18n="hero.name">Daniel Ardila</h1>
-            <span class="lock__corner lock__corner--tl" aria-hidden="true"></span>
-            <span class="lock__corner lock__corner--tr" aria-hidden="true"></span>
-            <span class="lock__corner lock__corner--bl" aria-hidden="true"></span>
-            <span class="lock__corner lock__corner--br" aria-hidden="true"></span>
-          </div>
+          <h1 class="hero__name" id="hero-name" data-i18n="hero.name">Daniel Ardila</h1>
           <p class="hero__role" data-i18n="hero.role"></p>
           <p class="hero__intro" data-i18n="hero.intro"></p>
           <div class="hero__actions">
             <a class="button button--primary" href="#projects" data-i18n="hero.ctaProjects">See projects</a>
-            <a class="button" id="resume-link-hero" href="#" download data-i18n="hero.ctaResume">Download resume</a>
+            <a class="button" id="resume-link-hero" href="#" data-i18n="hero.ctaResume">Download resume</a>
           </div>
         </div>
 
-        <!-- 3D slot: today an SVG; later js/scene.js can mount a Three.js canvas here -->
-        <figure class="hero__scene" id="hero-scene" role="img" data-i18n-aria="hero.sceneLabel">
-          <svg viewBox="0 0 600 520" aria-hidden="true" focusable="false">
-            <defs>
-              <linearGradient id="floor-fade" x1="0" y1="300" x2="0" y2="520" gradientUnits="userSpaceOnUse">
-                <stop offset="0" stop-color="#9DABC8" stop-opacity="0"/>
-                <stop offset="1" stop-color="#9DABC8" stop-opacity=".55"/>
-              </linearGradient>
-              <radialGradient id="floor-edge" cx="300" cy="420" r="300" gradientUnits="userSpaceOnUse">
-                <stop offset=".55" stop-color="#fff"/>
-                <stop offset="1" stop-color="#000"/>
-              </radialGradient>
-              <mask id="floor-mask"><rect width="600" height="520" fill="url(#floor-edge)"/></mask>
-            </defs>
-            <g stroke="url(#floor-fade)" stroke-width="1.5" fill="none" id="floor" mask="url(#floor-mask)"></g>
-            <g class="hero__object" fill="none" stroke-linejoin="round">
-              <polygon points="300,92 392,145 392,251 300,304 208,251 208,145" stroke="#E8EDF7" stroke-width="2.5"/>
-              <polyline points="208,145 300,198 392,145" stroke="#E8EDF7" stroke-width="2.5"/>
-              <line x1="300" y1="198" x2="300" y2="304" stroke="#E8EDF7" stroke-width="2.5"/>
-              <polygon points="300,92 392,145 300,198 208,145" fill="#F5B83D" fill-opacity=".9" stroke="none"/>
-            </g>
-            <ellipse cx="300" cy="392" rx="96" ry="22" fill="#0E1A38" opacity=".7"/>
-          </svg>
+        <!-- The brand, alive: a generative flow field (js/flowfield.js). A future Three.js scene can mount here too. -->
+        <figure class="hero__frame">
+          <div class="hero__canvas">
+            <canvas id="flow-field" role="img" data-i18n-aria="hero.frameLabel"></canvas>
+          </div>
+          <figcaption class="hero__caption">
+            <svg class="hero__caption-logo" aria-hidden="true" focusable="false"><use href="#logo"/></svg>
+            <span data-i18n="hero.tagline">Navigating between order and chaos.</span>
+          </figcaption>
         </figure>
       </section>
 
@@ -98,7 +110,7 @@
         <h2 id="about-heading" data-i18n="about.heading">About</h2>
         <div class="about">
           <div class="about__body" id="about-body"></div>
-          <aside class="about__facts" aria-labelledby="facts-heading">
+          <aside class="about__facts surface" aria-labelledby="facts-heading">
             <h3 id="facts-heading" data-i18n="about.factsHeading">Quick facts</h3>
             <dl id="about-facts"></dl>
             <p class="about__links">
@@ -112,7 +124,7 @@
       <section class="section" id="resume" aria-labelledby="resume-heading">
         <div class="section__head section__head--row">
           <h2 id="resume-heading" data-i18n="resume.heading">Resume</h2>
-          <a class="button" id="resume-link" href="#" download data-i18n="resume.download">Download resume (PDF)</a>
+          <a class="button" id="resume-link" href="#" data-i18n="resume.download">Download resume (PDF)</a>
         </div>
         <div class="resume">
           <div>
@@ -143,12 +155,14 @@
   </main>
 
   <footer class="site-footer">
+    <svg class="site-footer__logo" aria-hidden="true" focusable="false"><use href="#logo"/></svg>
     <p data-i18n="footer.built"></p>
   </footer>
 
   <noscript><p class="noscript">This portfolio needs JavaScript to load its content.</p></noscript>
 
   <script src="js/i18n.js"></script>
+  <script src="js/flowfield.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>

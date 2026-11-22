@@ -8,10 +8,11 @@ Plain HTML, CSS and JavaScript. No build step: GitHub Pages serves the files as 
 ## Structure
 
 ```
-index.html            Page skeleton (home + project page)
+index.html            Page skeleton (home + project page), logo SVG symbols
 css/styles.css        All styles
 js/i18n.js            Loads text from i18n/<lang>.json
-js/app.js             Renders projects, about, resume, contact and the project pages
+js/app.js             Renders projects, about, resume, contact, project pages, theme toggle
+js/flowfield.js       Generative flow field in the hero
 data/site.json        Settings: languages, contact links, resume PDF, drafts
 data/projects.json    Projects in display order: links, images, tech, draft flag
 i18n/en.json          Every text on the site, in English (main language)
@@ -55,7 +56,11 @@ Gallery items can be `{ "type": "image" }`, `{ "type": "video" }` (an .mp4 in th
 
 **Turn on Spanish:** translate `i18n/es.json` with the same structure as `en.json`, then set `"languages": ["en", "es"]` in `data/site.json`. The EN/ES switch appears in the header. Keys missing in Spanish fall back to English.
 
-**Future 3D hero:** the `#hero-scene` figure in `index.html` holds a static SVG. A Three.js scene can replace it by mounting a canvas into that element from a new `js/scene.js` module, without touching the rest of the site.
+**Brand ("Navegante"):** colors, fonts and the logo come from Daniel's design system (Figma: "Diseño y cultura" board and "Navegante – Ficha técnica del logo"). Color roles for light and dark mode live at the top of `css/styles.css`; every pair passes WCAG AA. The logo is inline in `index.html` as two SVG symbols (`#logo` full, `#logo-small` simplified for small sizes) and as files in `assets/img/brand/`.
+
+**Light and dark mode:** the toggle in the header saves the choice in the browser; with no saved choice the site follows the system setting.
+
+**Hero flow field:** `js/flowfield.js` draws the generative piece in a canvas (Perlin noise, 60-30-10 colors). It pauses off screen and shows a still image when the visitor has "reduce motion" turned on. A future Three.js scene can mount in the same `.hero__canvas` element.
 
 ## Publish on GitHub Pages
 

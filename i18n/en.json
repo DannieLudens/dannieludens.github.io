@@ -11,7 +11,9 @@
     "resume": "Resume",
     "contact": "Contact",
     "language": "Language",
-    "qa": "QA"
+    "qa": "QA",
+    "themeToDark": "Switch to dark mode",
+    "themeToLight": "Switch to light mode"
   },
   "hero": {
     "name": "Daniel Ardila",
@@ -19,7 +21,8 @@
     "intro": "I take ideas from sketch to something people can play, touch and walk around in. Based in Medellín, Colombia, and open to junior roles in Unity, XR and QA.",
     "ctaProjects": "See projects",
     "ctaResume": "Download resume",
-    "sceneLabel": "Placeholder for an interactive 3D scene"
+    "tagline": "Navigating between order and chaos.",
+    "frameLabel": "Generative flow field: thousands of particles in my brand colors drift through a field of forces that keeps changing."
   },
   "projects": {
     "heading": "Projects",
@@ -59,6 +62,7 @@
     "body": [
       "I'm a Unity developer and creative technologist from Medellín, Colombia. I study Digital Entertainment Design Engineering at Universidad Pontificia Bolivariana (UPB) and I'm finishing the Junior Unity Developer bootcamp at Generation Colombia.",
       "What I enjoy most is the moment an idea starts to respond: a jump that finally feels right, an AR filter that follows your hands, a room in VR you can reach into. I co-founded BioFrame, an early-stage creative technology studio, where I prototype interactive solutions, and in 2026 I helped other students build their VR and AR projects as a teaching assistant at UPB.",
+      "My personal brand, the Navigator, comes from how I work: I plan with structure, and when the plan breaks I recalculate instead of stopping. The logo is a delta wing shaped like a boomerang, a nod to my first dream of flying and to a path that keeps moving forward even when it has to turn back. The moving field at the top of this page is that idea in code.",
       "I use AI tools, mainly Claude, as a tutor, a pair programmer and a testing assistant. They help me learn faster and ship sooner, but I don't keep code I can't explain. Each project page says what the AI did and what I did.",
       "I'm looking for my first role in the industry, as a junior Unity developer, in XR, or in QA. Testing a build, measuring it and writing down what breaks is part of how I work."
     ],
@@ -158,7 +162,7 @@
     "copied": "Email copied"
   },
   "footer": {
-    "built": "Built by hand with HTML, CSS and JavaScript. Hosted on GitHub Pages."
+    "built": "Designed and built by Daniel Ardila with HTML, CSS and JavaScript. Hosted on GitHub Pages."
   },
   "noscript": "This portfolio needs JavaScript to load its content.",
   "content": {
