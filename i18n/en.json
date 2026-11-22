@@ -370,6 +370,7 @@
         "Designed the experience and the interface of both pieces as the team's UI/UX designer.",
         "Built the digital prototypes in p5.js: an antique phone where you dial a character from a directory and hear their story, and a display case that narrates its objects, so we could test both ideas before moving to hardware.",
         "Built the physical display case prototype with the head of engineering: a presence sensor starts the sequence when a visitor comes within range, and LEDs light each object as the voice mentions it.",
+        "Modeled and sculpted the display case pieces in Blender (a shirt, a mask and a statue), testing shapes until they were ready for 3D printing.",
         "Ran usability tests together with the team and turned the findings into design changes."
       ],
       "challenges": [
@@ -506,7 +507,30 @@
       ],
       "credits": [
         {
-          "before": "Made with Mateo Barón Botero (app design in Figma and device sketch), Juan Mateo Espinal Restrepo (brand sketches), Daniel Marlon Rodríguez Caro (3D device model in Blender) and Juan Alexander Zuluaga Arias. Course taught by professor ",
+          "before": "App design in Figma and device sketch: ",
+          "name": "Mateo Barón Botero",
+          "url": "https://www.linkedin.com/in/mateo-b-36a950127/",
+          "after": "."
+        },
+        {
+          "before": "Brand sketches: ",
+          "name": "Juan Mateo Espinal Restrepo",
+          "url": "https://www.linkedin.com/in/juan-mateo-espinal-restrepo-7886a83a9/",
+          "after": "."
+        },
+        {
+          "before": "3D device model in Blender: ",
+          "name": "Daniel Marlon Rodríguez Caro",
+          "after": "."
+        },
+        {
+          "before": "Team member: ",
+          "name": "Juan Alexander Zuluaga Arias",
+          "url": "https://www.linkedin.com/in/juan-alexander-zuluaga-arias-558634319/",
+          "after": "."
+        },
+        {
+          "before": "Course taught by professor ",
           "name": "Ariel Humberto Acevedo Acosta",
           "after": "."
         }
