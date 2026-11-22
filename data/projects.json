@@ -181,8 +181,8 @@
       {
         "type": "image",
         "src": "assets/img/projects/voces/team.jpg",
-        "portrait": true,
-        "end": true
+        "end": true,
+        "ratio": "1 / 1"
       }
     ],
     "links": {
@@ -247,14 +247,59 @@
   {
     "id": "gimmy",
     "draft": true,
-    "year": "",
+    "year": "2025",
     "platform": [],
     "tech": [
+      "Project management",
+      "User research",
+      "Blender",
+      "Ultimaker Cura",
       "3D printing",
-      "TODO: CAD/3D tool (Blender? Fusion?)"
+      "Figma (team)"
     ],
-    "cover": "assets/img/projects/gimmy-cover.svg",
-    "gallery": [],
+    "cover": "assets/img/projects/gimmy/ai-concepts.jpg",
+    "gallery": [
+      {
+        "type": "image",
+        "src": "assets/img/projects/gimmy/sketch.jpg"
+      },
+      {
+        "type": "image",
+        "src": "assets/img/projects/gimmy/app-highlights.jpg",
+        "ratio": "2330 / 1020"
+      },
+      {
+        "type": "image",
+        "src": "assets/img/projects/gimmy/app-onboarding.jpg",
+        "ratio": "2774 / 1020"
+      },
+      {
+        "type": "image",
+        "src": "assets/img/projects/gimmy/app-start.jpg",
+        "ratio": "1889 / 1020"
+      },
+      {
+        "type": "image",
+        "src": "assets/img/projects/gimmy/brand-sketches.jpg",
+        "ratio": "1392 / 720"
+      },
+      {
+        "type": "image",
+        "src": "assets/img/projects/gimmy/ai-concepts.jpg",
+        "ratio": "1280 / 648"
+      },
+      {
+        "type": "image",
+        "src": "assets/img/projects/gimmy/architecture.jpg",
+        "portrait": true,
+        "ratio": "702 / 1330"
+      },
+      {
+        "type": "image",
+        "src": "assets/img/projects/gimmy/team.jpg",
+        "end": true
+      }
+    ],
     "links": {
       "play": null,
       "itch": null,

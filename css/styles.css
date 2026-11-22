@@ -381,20 +381,24 @@ main:focus { outline: none; }
 .frame--portrait img, .frame--portrait video { aspect-ratio: 9 / 16; }
 .frame--featured.frame--portrait img, .frame--featured.frame--portrait video { width: auto; max-width: 100%; height: min(80vh, 46rem); margin-inline: auto; }
 .frame--end { margin-top: 0.5rem; }
+.project__gallery > .frame--portrait:not(.frame--featured):not(.frame--end) img, .project__gallery > .frame--portrait:not(.frame--featured):not(.frame--end) video { width: auto; max-width: 100%; height: min(80vh, 40rem); margin-inline: auto; }
+.frame--end img, .frame--end video { width: min(100%, 34rem); margin-inline: auto; }
 .frame--end.frame--portrait img, .frame--end.frame--portrait video { width: auto; max-width: 100%; height: min(70vh, 36rem); margin-inline: auto; }
 
-/* Carousel: native horizontal scroll with snap, plus buttons */
-.carousel { display: grid; gap: 0.75rem; }
-.carousel__track { list-style: none; margin: 0; padding: 0 0 0.75rem; display: flex; gap: 1rem; overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain; scrollbar-width: thin; }
-.carousel__track:focus-visible { outline: 3px solid var(--focus); outline-offset: 4px; border-radius: var(--radius); }
-.carousel__slide { flex: 0 0 auto; scroll-snap-align: start; }
-.carousel__slide .frame img, .carousel__slide .frame video { width: auto; height: clamp(16rem, 45vh, 24rem); }
-.carousel__controls { display: flex; justify-content: flex-end; gap: 0.5rem; }
+/* Card stack: cards pile up behind the top one and rotate to the back */
+.deck { display: grid; gap: 1.5rem; margin-top: 1.5rem; overflow-x: clip; padding-block: 1rem; }
+.deck__cards { position: relative; height: clamp(18rem, 58vh, 32rem); display: grid; place-items: center; touch-action: pan-y; }
+.deck__card { position: absolute; max-width: calc(100% - 5rem); transform: translateX(calc(var(--pos) * 2.6rem)) rotate(calc(var(--pos) * 4deg)) scale(calc(1 - var(--pos) * 0.06)); transform-origin: center bottom; opacity: calc(1 - var(--pos) * 0.22); filter: brightness(calc(1 - var(--pos) * 0.12)); }
+.deck__card .frame img, .deck__card .frame video { width: auto; max-width: 100%; height: clamp(18rem, 58vh, 32rem); box-shadow: 0 0.75rem 2rem rgba(28, 28, 28, 0.28); }
+/* Images keep their own shape inside the stack (wide app strips, tall diagrams) */
+.deck__card .frame img { width: auto; height: auto; max-width: 100%; max-height: clamp(18rem, 58vh, 32rem); aspect-ratio: auto !important; }
+.deck__card:not(.is-top) { pointer-events: none; }
+@media (prefers-reduced-motion: no-preference) { .deck__card { transition: transform 0.45s cubic-bezier(.2,.7,.2,1), opacity 0.45s, filter 0.45s; } }
+.carousel__controls { display: flex; justify-content: center; align-items: center; gap: 1rem; }
+.deck__status { margin: 0; min-width: 3.5rem; text-align: center; font-variant-numeric: tabular-nums; }
 .carousel__btn { width: 2.75rem; height: 2.75rem; border-radius: 50%; border: 1px solid var(--line-strong); background: transparent; color: var(--heading); font-size: 1.1rem; cursor: pointer; }
-.carousel__btn:hover:not(:disabled) { background: var(--heading); color: var(--bg); }
+.carousel__btn:hover { background: var(--heading); color: var(--bg); }
 .carousel__btn:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
-.carousel__btn:disabled { opacity: 0.35; cursor: default; }
-@media (prefers-reduced-motion: no-preference) { .carousel__track { scroll-behavior: smooth; } }
 
 .project__body { margin-top: clamp(2.5rem, 6vw, 4rem); display: grid; gap: clamp(2.5rem, 5vw, 3.5rem); max-width: 46rem; }
 .project__body h2 { font-size: var(--step-3); margin-bottom: 1rem; }

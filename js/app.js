@@ -244,34 +244,50 @@
     return section;
   }
 
+  // Card stack: the top card is shown in full; "next" sends it to the back of the pile
   function renderCarousel(p, list) {
-    const track = el("ul", { class: "carousel__track", attrs: { tabindex: "0", "aria-label": t("projects.carousel") } });
-    list.forEach((x, i) => {
-      const li = el("li", { class: "carousel__slide", attrs: { "aria-label": (i + 1) + " / " + list.length } }, [galleryFrame(p, x.item, x.alt)]);
-      track.appendChild(li);
+    const deck = el("div", { class: "deck__cards" });
+    const cards = list.map((x, i) => {
+      const card = el("div", { class: "deck__card", attrs: { "aria-roledescription": "slide", "aria-label": (i + 1) + " / " + list.length } }, [galleryFrame(p, x.item, x.alt)]);
+      deck.appendChild(card);
+      return card;
     });
+    let top = 0;
+    const status = el("p", { class: "deck__status", attrs: { "aria-live": "polite" } });
+    const layout = () => {
+      cards.forEach((card, i) => {
+        const pos = (i - top + cards.length) % cards.length;
+        card.style.setProperty("--pos", pos);
+        card.style.zIndex = String(cards.length - pos);
+        card.classList.toggle("is-top", pos === 0);
+        card.inert = pos !== 0;
+        if (pos !== 0) card.querySelectorAll("video").forEach((v) => v.pause());
+      });
+      status.textContent = (top + 1) + " / " + cards.length;
+    };
+    const go = (dir) => { top = (top + dir + cards.length) % cards.length; layout(); };
     const prev = el("button", { class: "carousel__btn", text: "\u2190", attrs: { type: "button", "aria-label": t("projects.carouselPrev") } });
     const next = el("button", { class: "carousel__btn", text: "\u2192", attrs: { type: "button", "aria-label": t("projects.carouselNext") } });
-    const step = (dir) => {
-      const slide = track.querySelector(".carousel__slide");
-      const amount = slide ? slide.getBoundingClientRect().width + 16 : track.clientWidth * 0.8;
-      track.scrollBy({ left: dir * amount, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
-    };
-    prev.onclick = () => step(-1);
-    next.onclick = () => step(1);
-    const update = () => {
-      prev.disabled = track.scrollLeft <= 2;
-      next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 2;
-    };
-    track.addEventListener("scroll", update, { passive: true });
-    window.addEventListener("resize", update);
-    requestAnimationFrame(update);
-    // Only one clip plays at a time
-    track.addEventListener("play", (e) => track.querySelectorAll("video").forEach((v) => { if (v !== e.target) v.pause(); }), true);
-    return el("div", { class: "carousel", attrs: { role: "region", "aria-roledescription": "carousel", "aria-label": t("projects.carousel") } }, [
-      track,
-      el("div", { class: "carousel__controls" }, [prev, next])
+    prev.onclick = () => go(-1);
+    next.onclick = () => go(1);
+    // Swipe on touch screens
+    let startX = null;
+    deck.addEventListener("pointerdown", (e) => { if (e.pointerType !== "mouse") startX = e.clientX; });
+    deck.addEventListener("pointerup", (e) => {
+      if (startX === null) return;
+      const dx = e.clientX - startX; startX = null;
+      if (Math.abs(dx) > 40) go(dx < 0 ? 1 : -1);
+    });
+    const box = el("div", { class: "deck", attrs: { role: "region", "aria-roledescription": "carousel", "aria-label": t("projects.carousel") } }, [
+      deck,
+      el("div", { class: "carousel__controls" }, [prev, status, next])
     ]);
+    box.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowRight") { go(1); e.preventDefault(); }
+      if (e.key === "ArrowLeft") { go(-1); e.preventDefault(); }
+    });
+    layout();
+    return box;
   }
 
   // Click-to-load playable build: nothing is downloaded (and no camera is requested) until the visitor asks

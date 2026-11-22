@@ -468,27 +468,45 @@
     },
     "gimmy": {
       "title": "Gimmy",
-      "subtitle": "Concept for a smart, gamified gym",
-      "pitch": "A concept for a smart gym that turns training into a game, built around a device that clips onto the cable machine weights to count reps and track progress.",
-      "role": "UX designer and technology integrator",
-      "team": "TODO: Team size and roles",
-      "when": "Jan to May 2024",
-      "context": "Digital Entertainment Project Management course at UPB. The team took a problem found in gyms from research to a product concept, with physical prototypes made by 3D printing.",
+      "subtitle": "A gamified gym device, taken from user research to business plan",
+      "pitch": "A small device that clips magnetically onto gym machine weights, tracks every rep and connects over Bluetooth to an app that turns training into minigames, rewards and weekly challenges.",
+      "role": "Project manager, researcher and 3D printing",
+      "team": "Team of five",
+      "when": "Jan to May 2025",
+      "context": "Digital Entertainment Project Management (GYRPED) course at UPB. The idea came from the high dropout rate in gyms, especially among beginners: what if training worked like a game, with progression, constant feedback and rewards? Over the semester we documented the whole project in a 43-page management book, from user research to business model, financial plan, marketing and risks. The project stayed at concept stage: we didn't build the software or the electronics.",
       "did": [
-        "Helped turn the research on gym users’ problems into the concept of a smart, gamified gym.",
-        "Designed the device that attaches magnetically to cable machine weights and would count reps and report progress.",
-        "Prototyped its form with 3D printing. The project stayed at concept stage: we didn’t build the software or the electronics."
+        "Managed and organized the project as the team's project manager, and wrote the 43-page management book.",
+        "Led the research: a survey of 70 people with different relationships to the gym, 18 interviews about the idea, competitor analysis, user archetypes, and the product description and value proposition.",
+        "Shaped the idea and the narrative of the product with the team, and outlined the electronics approach we would need to build it.",
+        "Prepared my teammates' 3D models in Blender and 3D printed every proposal with Ultimaker Cura.",
+        "Every decision went through team reviews and proposals; my core was management, organization, design and research."
       ],
       "challenges": [
         {
-          "title": "TODO",
+          "title": "TODO: Hardest problem",
           "body": "TODO"
         }
       ],
       "ai": [
-        "TODO: What AI tools did, and what you did. If none: \"No AI tools were used to build this project.\""
+        "We used AI image generation to visualize the device from our own descriptions, so we could show what it might look like in the group presentations. The app design, the sketches, the 3D models, the research and the management book were made by the team."
       ],
-      "gallery": []
+      "gallery": [
+        "Hand sketch of the device by Mateo Barón, front and back: camera sensor, Bluetooth, battery and volume buttons, USB-C port, a magnet on the back and a removable elastic band.",
+        "Gimmy app screens designed in Figma by Mateo Barón: a progress dashboard, the exercise filter, the choice between audio and minigame training, a minigame running during a bench press set, and the weekly commitment step.",
+        "The onboarding evaluation: welcome screen and questions about fitness goal, gender, age, fitness level and preferred type of exercise.",
+        "Splash screen, sign in, sign up and the start of a workout.",
+        "Brand sketches by Juan Mateo Espinal: hand-drawn logo ideas for Gimmy and the final yellow G mark.",
+        "AI-generated concept images of the device, made from our own description to show in group presentations. They are not photos of a real prototype.",
+        "Diagram of how Gimmy works: the device sends data to the mobile app, which publishes it to AWS IoT Core; a Lambda function stores the metrics in DynamoDB, and a web dashboard reads them through API Gateway.",
+        "The five members of the Gimmy team in a classroom at UPB."
+      ],
+      "credits": [
+        {
+          "before": "Made with Mateo Barón Botero (app design in Figma and device sketch), Juan Mateo Espinal Restrepo (brand sketches), Daniel Marlon Rodríguez Caro (3D device model in Blender) and Juan Alexander Zuluaga Arias. Course taught by professor ",
+          "name": "Ariel Humberto Acevedo Acosta",
+          "after": "."
+        }
+      ]
     }
   },
   "qa": {
