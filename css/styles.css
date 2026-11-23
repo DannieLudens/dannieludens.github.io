@@ -125,7 +125,8 @@ a:hover { color: var(--link-hover); }
 }
 .nav__logo { width: 2.4rem; height: 1.6rem; color: var(--logo); }
 .nav__links { display: flex; gap: clamp(0.75rem, 2.5vw, 1.75rem); list-style: none; margin: 0; padding: 0; }
-.nav__links a { color: var(--heading); text-decoration: none; padding: 0.3rem 0; }
+.nav__links a { color: var(--heading); text-decoration: none; padding: 0.3rem 0; white-space: nowrap; }
+@media (max-width: 24rem) { .nav__links { gap: 0.6rem; } .nav__links a { font-size: 0.9rem; } }
 .nav__links a:hover { text-decoration: underline; text-decoration-color: var(--naranja); color: var(--heading); }
 .nav__tools { display: flex; align-items: center; gap: 0.5rem; }
 
@@ -435,3 +436,4 @@ main:focus { outline: none; }
   .site-header, .hero__frame, .actions, .pager, .theme-toggle { display: none; }
   body { background: #fff; color: #000; }
 }
+.hero__lockup-word { white-space: nowrap; }

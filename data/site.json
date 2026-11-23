@@ -1,7 +1,8 @@
 {
   "defaultLanguage": "en",
   "languages": [
-    "en"
+    "en",
+    "es"
   ],
   "showDrafts": false,
   "contact": {

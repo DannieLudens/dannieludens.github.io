@@ -1,6 +1,339 @@
 {
-  "_note": "Spanish version. Copy the structure of en.json and translate. Any key missing here falls back to English. Add \"es\" to languages in data/site.json to show the language switch.",
+  "meta": {
+    "title": "Daniel Ardila | Desarrollador Unity, AR y VR",
+    "description": "Portafolio de Daniel Ardila, desarrollador Unity de Medellín, Colombia, que crea juegos y experiencias de AR y VR."
+  },
+  "nav": {
+    "skip": "Saltar al contenido",
+    "home": "Daniel Ardila",
+    "projects": "Proyectos",
+    "about": "Sobre mí",
+    "resume": "Hoja de vida",
+    "contact": "Contacto",
+    "language": "Idioma",
+    "qa": "QA",
+    "themeToDark": "Cambiar a modo oscuro",
+    "themeToLight": "Cambiar a modo claro"
+  },
+  "hero": {
+    "name": "Daniel Ardila",
+    "role": "Desarrollador Unity que crea juegos y experiencias de AR y VR.",
+    "intro": "Llevo las ideas del boceto a algo que la gente puede jugar, tocar y recorrer. Vivo en Medellín, Colombia, y busco roles junior en Unity, XR y QA.",
+    "ctaProjects": "Ver proyectos",
+    "ctaResume": "Descargar hoja de vida",
+    "frameLabel": "Campo de flujo generativo: miles de partículas con los colores de mi marca se mueven por un campo de fuerzas que cambia todo el tiempo.",
+    "taglineLead": "Navegando entre",
+    "taglineOrder": "el orden",
+    "taglineAnd": " y ",
+    "taglineChaos": "el caos"
+  },
+  "projects": {
+    "heading": "Proyectos",
+    "lead": "Trabajos seleccionados. Cada proyecto dice qué construí yo.",
+    "role": "Mi rol",
+    "team": "Equipo",
+    "when": "Cuándo",
+    "builtWith": "Hecho con",
+    "open": "Ver proyecto",
+    "play": "Jugar",
+    "code": "Código",
+    "video": "Video",
+    "live": "Abrir versión en línea",
+    "draft": "Borrador, oculto en el sitio público",
+    "back": "Todos los proyectos",
+    "context": "Contexto",
+    "did": "Lo que hice",
+    "challenges": "Retos y cómo los resolví",
+    "gallery": "Capturas y video",
+    "prev": "Proyecto anterior",
+    "next": "Proyecto siguiente",
+    "notFound": "Ese proyecto no existe. Vuelve a todos los proyectos.",
+    "platform": {
+      "web": "Se juega en el navegador",
+      "vr": "VR",
+      "ar": "AR",
+      "windows": "Windows"
+    },
+    "ai": "Cómo usé la IA",
+    "web": "Versión web",
+    "embedHeading": "Pruébalo aquí",
+    "embedFull": "Abrir en pantalla completa",
+    "embedTitle": "Versión interactiva de {title}",
+    "itch": "Jugar en itch.io",
+    "carousel": "Más fotos y clips",
+    "carouselPrev": "Anterior",
+    "carouselNext": "Siguiente"
+  },
+  "about": {
+    "heading": "Sobre mí",
+    "body": [
+      "Soy desarrollador Unity y tecnólogo creativo de Medellín, Colombia. Estudio Ingeniería en Diseño de Entretenimiento Digital en la Universidad Pontificia Bolivariana (UPB) y estoy terminando el bootcamp Junior Unity Developer de Generation Colombia.",
+      "Lo que más disfruto es el momento en que una idea empieza a responder: un salto que por fin se siente bien, un filtro de AR que sigue tus manos, una habitación en VR que puedes tocar. Soy cofundador de BioFrame, un estudio de tecnología creativa en etapa temprana, donde prototipo soluciones interactivas, y en 2026 ayudé a otros estudiantes a construir sus proyectos de VR y AR como monitor en la UPB.",
+      "Mi marca personal, el Navegante, nace de mi forma de trabajar: planeo con estructura y, cuando el plan se rompe, recalculo en vez de detenerme. El logo es un ala delta con forma de bumerán, un guiño a mi primer sueño de volar y a un camino que sigue avanzando aunque a veces tenga que devolverse. El campo en movimiento al inicio de esta página es esa idea hecha código.",
+      "Uso herramientas de IA, sobre todo Claude, como tutor, compañero de programación y asistente de pruebas. Me ayudan a aprender más rápido y a entregar antes, pero no conservo código que no pueda explicar. Cada proyecto dice qué hizo la IA y qué hice yo.",
+      "Busco mi primer rol en la industria, como desarrollador Unity junior, en XR o en QA. Probar un build, medirlo y anotar lo que falla es parte de mi forma de trabajar."
+    ],
+    "factsHeading": "Datos rápidos",
+    "facts": [
+      { "label": "Vivo en", "value": "Medellín, Colombia" },
+      { "label": "Idiomas", "value": "Español (nativo), inglés (C1, EF SET)" },
+      { "label": "Motores y código", "value": "Unity, C#, JavaScript, p5.js" },
+      { "label": "AR", "value": "8th Wall, Vuforia" },
+      { "label": "UX", "value": "Diseño UX, pruebas con usuarios" },
+      { "label": "Diseño, 3D y audio", "value": "Figma, Blender, suite de Adobe, Affinity, REAPER, VCV Rack" },
+      { "label": "Flujo de trabajo", "value": "Git y GitHub, Visual Studio Code, JetBrains Rider, herramientas de IA para desarrollo" }
+    ],
+    "certificate": "Ver certificado EF SET",
+    "bioframe": "Visitar BioFrame"
+  },
   "resume": {
+    "heading": "Hoja de vida",
+    "download": "Descargar hoja de vida (PDF)",
+    "education": "Formación",
+    "experience": "Experiencia",
+    "items": {
+      "education": [
+        { "when": "Ene 2020 a dic 2027 (previsto)", "title": "Ingeniería en Diseño de Entretenimiento Digital", "org": "Universidad Pontificia Bolivariana, Medellín" },
+        { "when": "Sep 2026 a dic 2026", "title": "Bootcamp Junior Unity Developer", "org": "Generation Colombia, en línea" },
+        { "when": "2022 a hoy", "title": "Cursos de desarrollo e ingeniería", "org": "Platzi, Coursera, Coddy y SoloLearn, en línea" },
+        { "when": "Sep 2017 a dic 2017", "title": "Diplomado en Herramientas de Diseño Digital", "org": "CESDE, Medellín" }
+      ],
+      "experience": [
+        { "when": "Jul 2026 a hoy", "title": "Cofundador e integrador de tecnología", "org": "BioFrame, Medellín", "detail": "Prototipo soluciones interactivas para un estudio de tecnología creativa en etapa temprana, apoyado por los programas de emprendimiento de la Alcaldía de Medellín." },
+        { "when": "Jul 2026 a sep 2026", "title": "Monitor de VR y AR, grupo de investigación", "org": "Universidad Pontificia Bolivariana", "detail": "Ayudé a estudiantes a convertir sus ideas en experiencias de VR en Unity y asesoré proyectos de AR con 8th Wall y Vuforia." },
+        { "when": "Nov 2021 a ene 2022", "title": "Ventas al por mayor", "org": "M.A.C. & Status Clothing, Bello", "detail": "Gestioné pedidos al por mayor con una comunicación clara y oportuna, lo que ayudó a aumentar los ingresos de la empresa." }
+      ]
+    },
     "pdf": "assets/cv/Daniel-Ardila-CV-ES.pdf"
+  },
+  "contact": {
+    "heading": "Contacto",
+    "body": "Estoy disponible para roles junior, prácticas y trabajos freelance en Unity, XR y QA. El correo es la forma más rápida de contactarme.",
+    "email": "Correo",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "itch": "itch.io",
+    "copy": "Copiar correo",
+    "copied": "Correo copiado"
+  },
+  "footer": {
+    "built": "Diseñado y construido por Daniel Ardila con HTML, CSS y JavaScript. Alojado en GitHub Pages."
+  },
+  "noscript": "Este portafolio necesita JavaScript para cargar su contenido.",
+  "content": {
+    "mohan": {
+      "title": "El Silbido del Mohán",
+      "subtitle": "Un plataformero entre dos mundos",
+      "pitch": "Un plataformero 2D en el que saltas entre el mundo real y el mundo espiritual para reunir ofrendas para el Mohán, un espíritu del río del folclor colombiano, y escapas antes de que te atrape.",
+      "role": "Programador de gameplay: construí todas las mecánicas del juego",
+      "team": "4 personas",
+      "when": "Nov 2026, en dos días",
+      "context": "Hecho para la Game Jam #2 del bootcamp Junior Unity Developer de Generation Colombia, con el tema \"Dos mundos\". Mis compañeros se encargaron del arte, el arte de la interfaz, el sonido y la documentación, y yo escribí todo el código de gameplay.",
+      "did": [
+        "Controlador del jugador con movimiento, salto, caída más rápida, coyote time y jump buffering.",
+        "Cambio de mundo con una sola tecla, mediante un singleton WorldManager que envía eventos para que cada sistema reaccione por su cuenta. No permite el cambio si el jugador quedaría dentro de un suelo sólido.",
+        "Objetos que existen solo en el mundo real, solo en el mundo espiritual o en ambos.",
+        "Las ofrendas que se recogen, el altar que las cuenta, la secuencia de escape con su portal de salida y la pantalla de game over.",
+        "El medidor del Mohán, la barra de tensión que se llena mientras permaneces en el mundo espiritual.",
+        "Todos los valores que un diseñador podría ajustar, como distancias, tiempos, velocidades y textos, expuestos en el Inspector para que el equipo pudiera ajustar el juego sin tocar código."
+      ],
+      "challenges": [
+        {
+          "title": "Lograr que el salto se sintiera bien",
+          "body": "El primer salto se sentía flotante y perdía pulsaciones cerca de los bordes. Dupliqué la gravedad en la caída, limité la velocidad de caída y agregué 0,1 s de coyote time y jump buffering. También definí la altura del salto en tiles con un gizmo en el editor, para que el diseño de niveles y la física hablaran en las mismas unidades."
+        },
+        {
+          "title": "Preparar el build para el navegador en itch.io",
+          "body": "Antes de publicar, hice una revisión de QA del build WebGL con un agente de IA conectado al Editor de Unity. Medimos la memoria y el tamaño de descarga, y encontramos que las pistas largas de música estaban configuradas para descomprimirse al cargar, lo que podía ocupar entre 80 y 90 MB de memoria cada una. Las cambié a comprimidas en memoria, usé el formato de compresión que itch.io sirve de forma nativa y eliminé el código sin usar. El resultado: unos 27,5 MB de descarga, 144 FPS al tope del monitor y cero errores en la consola. Lo documenté todo como una lista de verificación para el equipo."
+        }
+      ],
+      "gallery": [
+        "Pantalla de título de El Silbido del Mohán: pixel art de un pescador con impermeable amarillo remando en una canoa al atardecer, con ruinas en el horizonte."
+      ],
+      "ai": [
+        "Trabajé con Claude como tutor y compañero de programación. Me explicó técnicas como el coyote time y el jump buffering, sugirió formas de estructurar los sistemas y revisó mi código. Construí las mecánicas paso a paso con esa guía, y sé qué hace cada línea y por qué está ahí.",
+        "Para el build del navegador conecté Claude al Editor de Unity como agente de IA para revisar la configuración del proyecto y medir el build WebGL. Revisé cada cambio antes de aplicarlo.",
+        "Los commits, los pull requests y las decisiones de diseño quedaron en manos de mi equipo y mías."
+      ],
+      "embed": {
+        "button": "Jugar El Silbido del Mohán",
+        "size": "Carga unos 29 MB solo después de hacer clic. Necesita teclado.",
+        "note": "Funciona mejor en computador. Controles: A y D para moverte, Espacio para saltar, W para cambiar de mundo, Esc para pausar."
+      }
+    },
+    "espejo-magico": {
+      "title": "Espejo Mágico",
+      "subtitle": "Un espejo mágico para el Tour Telemedellín",
+      "pitch": "Un espejo interactivo para el recorrido por los estudios de Telemedellín. Los visitantes lo controlan con gestos de las manos, se prueban filtros de AR y se llevan su foto a casa con un código QR.",
+      "role": "UX/UI, integración, visión artificial y programación",
+      "team": "Seis personas: cuatro de animación y dos de experiencias interactivas",
+      "when": "Ene a may 2026",
+      "context": "Proyecto final del Taller 7, la materia que reúne a todo el programa de Ingeniería en Diseño de Entretenimiento Digital de la UPB, con un cliente real: Telemedellín nos invitó a renovar parte de su museo. En nuestras visitas vimos que la muestra de maquillaje para cine y televisión era prácticamente invisible: entre el 70 y el 80 % de los visitantes pasaba de largo y nadie leía la infografía. Espejo Mágico la convierte en un espejo que controlas con las manos, donde cuatro presentadores del canal muestran cómo los maquillan para la pantalla, y el maquillaje aparece como parte del oficio para hombres y mujeres por igual. Ganó el máximo reconocimiento del programa, votado por el jurado de profesores en los premios DEX 2026-1.",
+      "did": [
+        "Diseñé la experiencia del visitante, desde el primer gesto frente al espejo hasta la foto que se lleva a casa.",
+        "Integré el seguimiento de manos con aprendizaje automático para que los visitantes controlen el espejo sin tocar nada.",
+        "Entrené un modelo de reconocimiento de objetos con Teachable Machine para que la cámara identifique herramientas de maquillaje impresas en 3D (un labial, una brocha y otras) y lance la secuencia animada del presentador correspondiente.",
+        "Imprimí en 3D esas herramientas de maquillaje a partir de los modelos del equipo de animación.",
+        "Conecté la API de AR de Snapchat para aplicar los filtros de maquillaje, y Cloudinary para guardar cada foto y entregarla con un código QR.",
+        "Construí y mantuve las dos versiones de la experiencia, una en Unity y otra para la web."
+      ],
+      "challenges": [
+        {
+          "title": "Reconocer objetos con luz real",
+          "body": "El modelo confundía los objetos cuando cambiaba la luz o el fondo no era uniforme. Redujimos los errores reentrenándolo con más ejemplos y controlando la iluminación alrededor del espejo, aunque no llegó a ser perfecto en el tiempo que teníamos."
+        },
+        {
+          "title": "El rendimiento y el paso de una app a la web",
+          "body": "Las animaciones y el audio hacían pesado el proyecto, y el plan original de entregar un APK de Unity tuvo problemas técnicos. Pasamos la experiencia a una versión web e integramos el audio en los renders para simplificar la reproducción. El cambio valió la pena: el navegador nos permitió crear la superficie del espejo que se ondula como mercurio cuando mueves la mano."
+        },
+        {
+          "title": "Lo que cambiaron 11 pruebas con usuarios",
+          "body": "A los participantes les encantó que el espejo reaccionara sin tocarlo y que los objetos impresos activaran el contenido, pero el gesto de pinza para elegir presentador no era intuitivo. Rediseñamos las instrucciones de los gestos y agregamos la identidad de Telemedellín (logo, colores y referencias al canal) a la interfaz."
+        }
+      ],
+      "gallery": [
+        "Pantalla de inicio de Espejo Mágico: los cuatro presentadores animados en un set de televisión detrás de un marco de espejo con bombillos, con el logo de Telemedellín."
+      ],
+      "ai": [
+        "Reconocer las herramientas de maquillaje es en sí un modelo de IA, que entrené con Teachable Machine con ejemplos de los objetos impresos en 3D. La música de fondo se generó con IA, y la voz en off la grabó el equipo de locución de la UPB.",
+        "También trabajé con un asistente de IA como guía para conectar las APIs (seguimiento de manos, la API de AR de Snapchat y Cloudinary): me ayudó a entender cómo funciona cada integración para construirla y ponerla a funcionar yo mismo."
+      ],
+      "embed": {
+        "button": "Probar Espejo Mágico (requiere cámara)",
+        "note": "Funciona mejor en un computador con Chrome o Edge y cámara. Haz el gesto de pinza para avanzar. Teclas: N abre el menú de presentadores, M vuelve al espejo.",
+        "size": "Carga unos 45 MB y pide acceso a la cámara solo después de hacer clic."
+      },
+      "credits": [
+        { "before": "Arte conceptual, modelado 3D, animación y render: ", "name": "Juana Vargas Ossa", "after": "." },
+        { "before": "Texturizado, escenarios, render y rigging: ", "name": "David Vanegas Londoño", "after": "." },
+        { "before": "Animación, props y texturizado: ", "name": "Tomás Mejía Murillo", "after": "." },
+        { "before": "Modelado 3D, animación, props y rigging: ", "name": "Jhohan Nicolás Sedano Correa", "after": "." },
+        { "before": "Música, efectos de sonido y guion: ", "name": "Jorge Luis Suarique Agudelo", "after": "." },
+        { "before": "Materia a cargo de los profesores Edwin Adolfo Hernández Pachón, Andrea González Moreno y ", "name": "Roberto Estupiñán", "url": "https://www.linkedin.com/in/donrober/", "after": "." }
+      ]
+    },
+    "voces": {
+      "title": "Voces – Objetos que hablan",
+      "subtitle": "Vitrinas que hablan para el Museo Juan del Corral",
+      "pitch": "Dos piezas interactivas para museos de Santa Fe de Antioquia: un teléfono antiguo para llamar a personajes del pasado del pueblo y unas vitrinas donde los objetos cuentan su propia historia mientras las luces iluminan cada uno.",
+      "role": "Diseñador UI/UX y prototipador en p5.js",
+      "team": "Equipo de cuatro: gerente de proyecto, jefe de ingeniería, diseñador UI/UX (yo) y narrativa y concepto",
+      "when": "Jul a nov 2025",
+      "context": "Taller 6 (Experiencias Interactivas) de la UPB. Nuestro estudio de 13 estudiantes propuso Memoria Viva, tres experiencias conectadas para el Museo Juan del Corral y el Museo de Arte Religioso de Santa Fe de Antioquia. Voces fue la parte de mi equipo. En una salida de campo el 30 de agosto de 2025 vimos que el recorrido dependía sobre todo de carteles y que los objetos no generaban una conexión emocional, así que nos propusimos que los visitantes escucharan el pasado en vez de solo mirarlo.",
+      "did": [
+        "Diseñé la experiencia y la interfaz de ambas piezas como diseñador UI/UX del equipo.",
+        "Construí los prototipos digitales en p5.js: un teléfono antiguo en el que marcas a un personaje del directorio y escuchas su historia, y una vitrina que narra sus objetos, para probar las dos ideas antes de pasar al hardware.",
+        "Construí el prototipo físico de la vitrina con el jefe de ingeniería: un sensor de presencia inicia la secuencia cuando un visitante se acerca, y los LED iluminan cada objeto cuando la voz lo menciona.",
+        "Modelé y esculpí en Blender las piezas de la vitrina (una camisa, una máscara y una estatua), probando formas hasta dejarlas listas para imprimir en 3D.",
+        "Hice pruebas de usabilidad junto con el equipo y convertí los hallazgos en cambios de diseño."
+      ],
+      "challenges": [
+        {
+          "title": "Lo que cambiaron las pruebas de usabilidad",
+          "body": "La mayoría entendió el teléfono de inmediato y lo encontró más atractivo que las vitrinas. Algunos no sabían de qué objeto hablaba la vitrina, así que cambiamos el inicio: la luz llega al objeto antes de que empiece la voz. Los participantes también señalaron que un ícono verde de llamada en mi prototipo del teléfono se veía demasiado moderno, así que quitamos los elementos que recuerdan la tecnología actual e hicimos el directorio más visual. Las voces con IA les parecieron misteriosas e interesantes, pero pidieron que sonaran más humanas y más cercanas a cada personaje."
+        }
+      ],
+      "ai": [
+        "Las voces de los personajes se hicieron con IA. Nicolás Quintero, encargado de la narrativa, usó Pinokio y ElevenLabs para entrenar un modelo con su propia voz y le dio un tono distinto a cada personaje; la voz de mujer salió de la biblioteca de voces de ElevenLabs. Los guiones, el diseño de la experiencia, los prototipos y el hardware los hizo el equipo. Nuestras pruebas de usabilidad también midieron qué tan cómodos se sentían los visitantes escuchando voces de IA."
+      ],
+      "links": {
+        "display": "Probar el prototipo de las vitrinas",
+        "phone": "Probar el prototipo del Teléfono al Pasado"
+      },
+      "gallery": [
+        "Video de la presentación final: se explica el proyecto mientras los visitantes prueban el teléfono antiguo y la vitrina ilumina cada objeto mientras habla.",
+        "Un visitante en la muestra final se lleva el teléfono antiguo al oído mientras marca un número del directorio.",
+        "La instalación montada para la muestra final: el cuadernillo de Voces, el directorio telefónico y la vitrina sobre la mesa.",
+        "El directorio telefónico: un cuadernillo con retratos ilustrados de los personajes y el número que hay que marcar para cada uno.",
+        "Proceso: las piezas de la vitrina impresas en 3D, limpias de soportes y luego pintadas a mano.",
+        "Nuestro equipo de cuatro en la muestra final, con el directorio, el teléfono antiguo, el letrero de Voces y la vitrina."
+      ],
+      "credits": [
+        { "before": "Hecho con Sebastián Andrés Pedroza Gallardo (gerente de proyecto), Nicolás Alexander Parra Tamayo (jefe de ingeniería) y ", "name": "Nicolás Quintero Cardona", "url": "https://www.linkedin.com/in/nicol%C3%A1s-quintero-cardona/", "after": " (narrativa y concepto)." }
+      ]
+    },
+    "semana-santa": {
+      "title": "Santa Pasión",
+      "subtitle": "Un videomapping de Semana Santa para Santa Fe de Antioquia, simulado en Unity",
+      "pitch": "Un recorrido nocturno por la plazuela de la Iglesia de Jesús Nazareno en Santa Fe de Antioquia mientras un narrador te guía por la Cuaresma, la Semana Santa y la Pascua, y la fachada de la iglesia, su altar y las casas de alrededor se iluminan con video proyectado.",
+      "role": "Líder del proyecto, desarrollador Unity, modelador 3D y narrativa",
+      "team": "Equipo de cuatro",
+      "when": "May 2025",
+      "context": "Taller 5 de la línea de Experiencias Interactivas de la UPB. Nuestro estudio diseñó Sancta Lumina, una ruta de Semana Santa por tres iglesias emblemáticas de Santa Fe de Antioquia (La Chinca, Jesús Nazareno y Santa Bárbara), cada una con su propia experiencia. El Museo de Arte Religioso, que hace parte de la Arquidiócesis de Santa Fe de Antioquia, nos abrió su espacio para este proyecto. Mi equipo diseñó el segundo acto, Santa Pasión, para la plazuela y la Iglesia de Jesús Nazareno: una ruta sensorial de 15 minutos en tres escenas. No podíamos proyectar sobre el edificio real, así que simulé el videomapping en Unity y presenté la secuencia completa.",
+      "did": [
+        "Modelé en Blender la plazuela, las casas de alrededor y la iglesia.",
+        "Escribí la narrativa: tres escenas (Cuaresma, Semana Santa y Pascua), cada una guiada por su color litúrgico (blanco y dorado, morado, rojo) y por la voz de un narrador.",
+        "Construí la simulación en Unity 6 (URP), con los videos proyectados sobre superficies ajustadas a la fachada de la iglesia, el altar y las casas.",
+        "Dirigí toda la secuencia con Timeline y cámaras de Cinemachine, sincronizada con la voz en off y la capa sonora.",
+        "Iluminé la escena nocturna con iluminación arquitectónica y exporté el build de Windows con el que la presentamos."
+      ],
+      "challenges": [
+        {
+          "title": "Volver a Unity para algo que no era un juego",
+          "body": "Era mi primera vez en Unity después de mucho tiempo, y no para hacer un juego sino para prototipar una experiencia. Además de volver a familiarizarme con el editor, tuve que contar una historia con Timeline y cámaras de Cinemachine en lugar de darle el control a un jugador."
+        },
+        {
+          "title": "Simular una proyección que no podíamos hacer de verdad",
+          "body": "Lo más difícil fue integrar todo y lograr que la simulación fuera creíble. Lo resolví reproduciendo cada video sobre un plano ajustado a la forma del edificio, para que la proyección siguiera la fachada y el altar. Nos quedamos con ganas de agregar iluminación volumétrica para mostrar los haces del proyector en el aire."
+        }
+      ],
+      "ai": [
+        "Los visuales proyectados sobre los edificios los generó el equipo con Sora de OpenAI, a partir de moodboards y referencias que preparamos, para acompañar la secuencia narrada. Los modelos 3D, la escena de Unity, el timeline y la narrativa se hicieron sin IA."
+      ],
+      "gallery": [
+        "Teaser de la experiencia: la cámara recorre la plazuela mientras la fachada, las casas y el altar se iluminan con video proyectado.",
+        "La plazuela con su fuente iluminada en azul y la fachada de la iglesia proyectada al fondo.",
+        "El altar dentro de la iglesia cubierto con nubes moradas y naranjas proyectadas."
+      ],
+      "credits": [
+        { "before": "Hecho con ", "name": "Luciana Gutierrez Posada", "url": "https://www.linkedin.com/in/luciana-gutierrez-posada/", "after": " (diseñadora), Ricardo Arturo Guerrero Oliva (investigador) y Sebastián Andrés Pedroza Gallardo (jefe de ingeniería)." }
+      ]
+    },
+    "gimmy": {
+      "title": "Gimmy",
+      "subtitle": "Un dispositivo de gimnasio gamificado, de la investigación con usuarios al plan de negocio",
+      "pitch": "Un pequeño dispositivo que se pega con imán a las pesas de las máquinas del gimnasio, registra cada repetición y se conecta por Bluetooth a una app que convierte el entrenamiento en minijuegos, recompensas y retos semanales.",
+      "role": "Gerente de proyecto, investigador e impresión 3D",
+      "team": "Equipo de cinco",
+      "when": "Ene a may 2025",
+      "context": "Materia Gestión y Realización de Proyectos de Entretenimiento Digital (GYRPED) de la UPB. La idea nació de la alta deserción en los gimnasios, sobre todo entre principiantes: ¿y si entrenar funcionara como un juego, con progresión, retroalimentación constante y recompensas? Durante el semestre documentamos todo el proyecto en un libro de gestión de 43 páginas, desde la investigación con usuarios hasta el modelo de negocio, el plan financiero, el mercadeo y los riesgos. El proyecto se quedó en concepto: no construimos el software ni la electrónica.",
+      "did": [
+        "Gestioné y organicé el proyecto como gerente del equipo, y escribí el libro de gestión de 43 páginas.",
+        "Lideré la investigación: una encuesta a 70 personas con distintas relaciones con el gimnasio, 18 opiniones sobre la idea, el análisis de la competencia, los usuarios arquetipo y la descripción del producto y su propuesta de valor.",
+        "Di forma a la idea y a la narrativa del producto con el equipo, y planteé la propuesta electrónica que necesitaríamos para construirlo.",
+        "Preparé en Blender los modelos 3D de mis compañeros e imprimí todas las propuestas con Ultimaker Cura.",
+        "Cada decisión pasó por revisiones y propuestas del equipo; mi núcleo fue la gestión, la organización, el diseño y la investigación."
+      ],
+      "challenges": [
+        {
+          "title": "Ponerle números a algo que todavía no existe",
+          "body": "Lo más difícil fue proyectar los costos y el presupuesto: lo que necesitarían el equipo, los componentes y el lanzamiento, todo como estimados para un producto que nadie había construido. Tuvimos que respaldar cada cifra con investigación y aceptar que el plan cambiaría con los precios reales."
+        },
+        {
+          "title": "Del concepto a un dispositivo que funcione",
+          "body": "Hacer real a Gimmy exigiría una electrónica que lea cada repetición y la envíe al teléfono sin fallar. La materia no nos pedía construirlo, pero llegamos más lejos de lo requerido: imprimí en 3D todas las propuestas para tener la forma en las manos. Sigue siendo un proyecto que podríamos intentar construir en el futuro."
+        }
+      ],
+      "ai": [
+        "Usamos generación de imágenes con IA para visualizar el dispositivo a partir de nuestras propias descripciones y mostrar cómo podría verse en las presentaciones del grupo. El diseño de la app, los bocetos, los modelos 3D, la investigación y el libro de gestión los hizo el equipo."
+      ],
+      "gallery": [
+        "Boceto a mano del dispositivo, de Mateo Barón, por delante y por detrás: sensor de cámara, Bluetooth, batería y botones de volumen, puerto USB-C, un imán atrás y una banda elástica removible.",
+        "Pantallas de la app Gimmy diseñadas en Figma por Mateo Barón: un panel de progreso, el filtro de ejercicios, la elección entre entrenamiento sonoro y minijuego, un minijuego durante una serie de press de banca y el paso del compromiso semanal.",
+        "La evaluación inicial: pantalla de bienvenida y preguntas sobre la meta de fitness, el género, la edad, el nivel físico y el tipo de ejercicio preferido.",
+        "Pantalla de inicio, inicio de sesión, registro y el comienzo de un entrenamiento.",
+        "Bocetos de marca de Juan Mateo Espinal: ideas de logo dibujadas a mano para Gimmy y la G amarilla final.",
+        "Imágenes de concepto del dispositivo generadas con IA a partir de nuestra descripción, para mostrar en las presentaciones del grupo. No son fotos de un prototipo real.",
+        "Diagrama de cómo funciona Gimmy: el dispositivo envía datos a la app móvil, que los publica en AWS IoT Core; una función Lambda guarda las métricas en DynamoDB y un panel web las lee a través de API Gateway.",
+        "Los cinco integrantes del equipo de Gimmy en un salón de la UPB."
+      ],
+      "credits": [
+        { "before": "Diseño de la app en Figma y boceto del dispositivo: ", "name": "Mateo Barón Botero", "url": "https://www.linkedin.com/in/mateo-b-36a950127/", "after": "." },
+        { "before": "Bocetos de marca: ", "name": "Juan Mateo Espinal Restrepo", "url": "https://www.linkedin.com/in/juan-mateo-espinal-restrepo-7886a83a9/", "after": "." },
+        { "before": "Modelo 3D del dispositivo en Blender: ", "name": "Daniel Marlon Rodríguez Caro", "after": "." },
+        { "before": "Integrante del equipo: ", "name": "Juan Alexander Zuluaga Arias", "url": "https://www.linkedin.com/in/juan-alexander-zuluaga-arias-558634319/", "after": "." },
+        { "before": "Materia a cargo del profesor ", "name": "Ariel Humberto Acevedo Acosta", "after": "." }
+      ]
+    }
   }
 }
