@@ -131,7 +131,7 @@
   },
   {
     "id": "voces",
-    "draft": true,
+    "draft": false,
     "year": "",
     "platform": [
       "web"
@@ -209,7 +209,7 @@
   },
   {
     "id": "semana-santa",
-    "draft": true,
+    "draft": false,
     "year": "2025",
     "platform": [
       "windows"
@@ -249,7 +249,7 @@
   },
   {
     "id": "gimmy",
-    "draft": true,
+    "draft": false,
     "year": "2025",
     "platform": [],
     "tech": [
