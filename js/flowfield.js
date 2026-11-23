@@ -43,7 +43,8 @@
 
   function FlowField(canvas, avoidEl) {
     this.canvas = canvas;
-    this.avoidEl = avoidEl || null; // the lockup: particles flow around it
+    this.avoidEl = avoidEl || null; // the hero: its data-avoid text keeps a clear area
+    this.zones = [];
     this.ctx = canvas.getContext("2d");
     this.running = false;
     this.visible = true;
@@ -77,24 +78,31 @@
     this.draw();
   };
 
-  // Ellipse around the lockup, in canvas coordinates
+  // Clear zones around the text, in canvas coordinates: one rounded box per element marked
+  // data-avoid (falls back to the old lockup selectors). Boxes use a 4-norm, so they hug
+  // wide lines of text better than ellipses.
   FlowField.prototype.measureAvoid = function () {
-    this.avoid = null;
+    this.zones = [];
     if (!this.avoidEl) return;
     const c = this.canvas.getBoundingClientRect();
-    const kids = this.avoidEl.querySelectorAll(".hero__caption-lead, .hero__lockup");
-    if (!kids.length) return;
-    let l = Infinity, t = Infinity, r = -Infinity, b = -Infinity;
-    kids.forEach((k) => { const q = k.getBoundingClientRect(); l = Math.min(l, q.left); t = Math.min(t, q.top); r = Math.max(r, q.right); b = Math.max(b, q.bottom); });
-    if (!isFinite(l) || r <= l) return;
-    this.avoid = { cx: (l + r) / 2 - c.left, cy: (t + b) / 2 - c.top, rx: (r - l) / 2 + 28, ry: (b - t) / 2 + 22 };
+    let els = this.avoidEl.querySelectorAll("[data-avoid]");
+    if (!els.length) els = this.avoidEl.querySelectorAll(".hero__caption-lead, .hero__lockup");
+    els.forEach((el) => {
+      const q = el.getBoundingClientRect();
+      if (q.width < 1 || q.height < 1) return;
+      this.zones.push({ cx: (q.left + q.right) / 2 - c.left, cy: (q.top + q.bottom) / 2 - c.top, rx: q.width / 2 + 26, ry: q.height / 2 + 18 });
+    });
   };
 
-  // Distance inside the avoid ellipse: < 1 means inside
+  // Distance to the nearest clear zone: < 1 means inside. Also remembers which zone.
   FlowField.prototype.inAvoid = function (x, y) {
-    const a = this.avoid; if (!a) return 9;
-    const dx = (x - a.cx) / a.rx, dy = (y - a.cy) / a.ry;
-    return dx * dx + dy * dy;
+    let best = 9; this.near = null;
+    for (const z of this.zones) {
+      const dx = (x - z.cx) / z.rx, dy = (y - z.cy) / z.ry;
+      const d2 = Math.sqrt(dx * dx * dx * dx + dy * dy * dy * dy);
+      if (d2 < best) { best = d2; this.near = z; }
+    }
+    return best;
   };
 
   // (Re)starts a particle at a random point with an empty trail
@@ -115,8 +123,9 @@
       const d2 = this.inAvoid(p.x, p.y);
       if (d2 < 1.6) {
         // Near the navigator: bend the path outward so the flow goes around it
-        const av = this.avoid, k = (1.6 - d2) * 2.2;
-        const ox = (p.x - av.cx) / (av.rx * av.rx), oy = (p.y - av.cy) / (av.ry * av.ry);
+        const av = this.near, k = (1.6 - d2) * 2.2;
+        const nx = (p.x - av.cx) / av.rx, ny = (p.y - av.cy) / av.ry;
+        const ox = (nx * nx * nx) / av.rx, oy = (ny * ny * ny) / av.ry;
         const ol = Math.hypot(ox, oy) || 1;
         vx += (ox / ol) * k; vy += (oy / ol) * k;
         const vl = Math.hypot(vx, vy) || 1; vx /= vl; vy /= vl;
@@ -188,11 +197,20 @@
     }
     document.addEventListener("visibilitychange", () => this.update());
     this.reduced.addEventListener?.("change", () => this.update());
-    let t;
-    window.addEventListener("resize", () => {
+    // Rebuild when the canvas changes size (window resize, text reflow after a language switch)
+    let t, lastW = this.w, lastH = this.h;
+    const onResize = () => {
       clearTimeout(t);
-      t = setTimeout(() => this.resize(), 200);
-    });
+      t = setTimeout(() => {
+        const r = this.canvas.getBoundingClientRect();
+        if (Math.round(r.width) !== lastW || Math.round(r.height) !== lastH) { this.resize(); lastW = this.w; lastH = this.h; }
+        else this.measureAvoid();
+      }, 200);
+    };
+    if ("ResizeObserver" in window) new ResizeObserver(onResize).observe(this.canvas);
+    else window.addEventListener("resize", onResize);
+    if (this.avoidEl && "ResizeObserver" in window) new ResizeObserver(onResize).observe(this.avoidEl);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => this.measureAvoid());
     this.update();
   };
 

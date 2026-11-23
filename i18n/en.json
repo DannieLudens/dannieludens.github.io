@@ -29,7 +29,8 @@
   },
   "projects": {
     "heading": "Projects",
-    "lead": "Selected work. Each project says what I built myself.",
+    "lead": "Selected work, newest first. Each project says what I built myself.",
+    "year": "Projects from {year}",
     "role": "My role",
     "team": "Team",
     "when": "When",

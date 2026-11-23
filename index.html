@@ -67,24 +67,24 @@
   <main id="main" tabindex="-1">
     <!-- HOME VIEW -->
     <div id="home-view">
-      <section class="hero" id="top" aria-labelledby="hero-name">
-        <div class="hero__text">
-          <h1 class="hero__name" id="hero-name" data-i18n="hero.name">Daniel Ardila</h1>
-          <p class="hero__role" data-i18n="hero.role"></p>
-          <p class="hero__intro" data-i18n="hero.intro"></p>
-          <div class="hero__actions">
-            <a class="button button--primary" href="#projects" data-i18n="hero.ctaProjects">See projects</a>
-            <a class="button" id="resume-link-hero" href="#" data-i18n="hero.ctaResume">Download resume</a>
-          </div>
+      <!-- Full-bleed hero: the brand's flow field (js/flowfield.js) runs behind the text.
+           Elements marked data-avoid keep a clear area: the particles flow around them. -->
+      <section class="hero on-dark" id="top" aria-labelledby="hero-name">
+        <div class="hero__canvas">
+          <canvas id="flow-field" role="img" data-i18n-aria="hero.frameLabel"></canvas>
         </div>
-
-        <!-- The brand, alive: a generative flow field (js/flowfield.js). A future Three.js scene can mount here too. -->
-        <figure class="hero__frame">
-          <div class="hero__canvas">
-            <canvas id="flow-field" role="img" data-i18n-aria="hero.frameLabel"></canvas>
+        <div class="hero__inner">
+          <div class="hero__text">
+            <h1 class="hero__name" id="hero-name" data-avoid data-i18n="hero.name">Daniel Ardila</h1>
+            <p class="hero__role" data-avoid data-i18n="hero.role"></p>
+            <p class="hero__intro" data-avoid data-i18n="hero.intro"></p>
+            <div class="hero__actions" data-avoid>
+              <a class="button button--primary" href="#projects" data-i18n="hero.ctaProjects">See projects</a>
+              <a class="button" id="resume-link-hero" href="#" data-i18n="hero.ctaResume">Download resume</a>
+            </div>
           </div>
           <!-- Brand lockup: the navigator (logo) sits between order and chaos -->
-          <figcaption class="hero__caption">
+          <p class="hero__caption" data-avoid>
             <span class="hero__caption-lead" data-i18n="hero.taglineLead">Navigating between</span>
             <span class="hero__lockup">
               <span class="hero__lockup-word hero__lockup-word--order" data-i18n="hero.taglineOrder">order</span>
@@ -92,8 +92,8 @@
               <span class="visually-hidden" data-i18n="hero.taglineAnd"> and </span>
               <span class="hero__lockup-word hero__lockup-word--chaos" data-i18n="hero.taglineChaos">chaos</span>
             </span>
-          </figcaption>
-        </figure>
+          </p>
+        </div>
       </section>
 
       <section class="section" id="projects" aria-labelledby="projects-heading">
@@ -112,11 +112,11 @@
         <div class="reports" id="qa-reports"></div>
       </section>
 
-      <section class="section section--about" id="about" aria-labelledby="about-heading">
+      <section class="section section--about on-surface" id="about" aria-labelledby="about-heading">
         <h2 id="about-heading" data-i18n="about.heading">About</h2>
         <div class="about">
           <div class="about__body" id="about-body"></div>
-          <aside class="about__facts surface" aria-labelledby="facts-heading">
+          <aside class="about__facts" aria-labelledby="facts-heading">
             <h3 id="facts-heading" data-i18n="about.factsHeading">Quick facts</h3>
             <dl id="about-facts"></dl>
             <p class="about__links">
@@ -144,7 +144,7 @@
         </div>
       </section>
 
-      <section class="section section--contact" id="contact" aria-labelledby="contact-heading">
+      <section class="section section--contact on-dark" id="contact" aria-labelledby="contact-heading">
         <h2 id="contact-heading" data-i18n="contact.heading">Contact</h2>
         <p class="contact__body" data-i18n="contact.body"></p>
         <p class="contact__email">
@@ -160,7 +160,7 @@
     <article id="project-view" class="project" hidden></article>
   </main>
 
-  <footer class="site-footer">
+  <footer class="site-footer on-dark">
     <svg class="site-footer__logo" aria-hidden="true" focusable="false"><use href="#logo"/></svg>
     <p data-i18n="footer.built"></p>
   </footer>

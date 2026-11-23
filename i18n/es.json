@@ -29,7 +29,8 @@
   },
   "projects": {
     "heading": "Proyectos",
-    "lead": "Trabajos seleccionados. Cada proyecto dice qué construí yo.",
+    "lead": "Trabajos seleccionados, del más reciente al más antiguo. Cada proyecto dice qué construí yo.",
+    "year": "Proyectos de {year}",
     "role": "Mi rol",
     "team": "Equipo",
     "when": "Cuándo",

@@ -39,8 +39,13 @@
     return location.search.includes("preview") || site.showDrafts;
   }
 
+  // Newest first (the route on the home page reads by year); keeps the JSON order within a year
   function visibleProjects() {
-    return projects.filter((p) => isPreview() || !p.draft);
+    return projects
+      .filter((p) => isPreview() || !p.draft)
+      .map((p, i) => ({ p, i }))
+      .sort((a, b) => (Number(b.p.year) || 0) - (Number(a.p.year) || 0) || a.i - b.i)
+      .map((x) => x.p);
   }
 
   // Unfinished text ("TODO ...") shows only in preview; the live site skips it
@@ -85,31 +90,48 @@
 
   // ---------- home ----------
 
+  // The route: projects grouped by year, each one a stop on a vertical line
   function renderProjectList() {
     const list = document.getElementById("project-list");
     list.replaceChildren();
+    const groups = [];
     visibleProjects().forEach((p) => {
-      const title = c(p.id, "title");
-      const media = el("a", { class: "row__media", attrs: { href: "#" + p.id, tabindex: "-1", "aria-hidden": "true" } }, [
-        el("img", { attrs: { src: p.cover, alt: "", loading: "lazy", width: "1600", height: "1000" } }),
-        platformTags(p)
-      ]);
-      const heading = el("h3", { class: "row__title" }, [el("a", { text: title, attrs: { href: "#" + p.id } })]);
-      const info = el("div", { class: "row__info" }, [
-        heading,
-        el("p", { class: "row__subtitle", text: c(p.id, "subtitle") }),
-        el("p", { class: "row__pitch", text: c(p.id, "pitch") }),
-        factsList(p, [
-          ["projects.role", c(p.id, "role")],
-          ["projects.when", c(p.id, "when")],
-          ["projects.builtWith", p.tech.join(", ")]
-        ]),
-        projectLinks(p, true)
-      ]);
-      const item = el("li", { class: "row" + (p.draft ? " row--draft" : ""), attrs: { id: "card-" + p.id } }, [media, info]);
-      if (p.draft) info.prepend(el("p", { class: "draft-note", text: t("projects.draft") }));
-      list.appendChild(item);
+      const year = p.year || "";
+      if (!groups.length || groups[groups.length - 1].year !== year) groups.push({ year, items: [] });
+      groups[groups.length - 1].items.push(p);
     });
+    groups.forEach((g) => {
+      const stops = el("ol", { class: "route__stops" });
+      g.items.forEach((p) => stops.appendChild(projectRow(p)));
+      const label = el("h3", { class: "route__year" }, [
+        el("span", { class: "visually-hidden", text: t("projects.year").replace("{year}", g.year) }),
+        el("span", { text: g.year, attrs: { "aria-hidden": "true" } })
+      ]);
+      list.appendChild(el("li", { class: "route__group" }, [label, stops]));
+    });
+  }
+
+  function projectRow(p) {
+    const title = c(p.id, "title");
+    const media = el("a", { class: "row__media", attrs: { href: "#" + p.id, tabindex: "-1", "aria-hidden": "true" } }, [
+      el("img", { attrs: { src: p.cover, alt: "", loading: "lazy", width: "1600", height: "1000" } })
+    ]);
+    const heading = el("h4", { class: "row__title" }, [el("a", { text: title, attrs: { href: "#" + p.id } })]);
+    const info = el("div", { class: "row__info" }, [
+      platformTags(p),
+      heading,
+      el("p", { class: "row__subtitle", text: c(p.id, "subtitle") }),
+      el("p", { class: "row__pitch", text: c(p.id, "pitch") }),
+      factsList(p, [
+        ["projects.role", c(p.id, "role")],
+        ["projects.when", c(p.id, "when")],
+        ["projects.builtWith", p.tech.join(", ")]
+      ]),
+      projectLinks(p, true)
+    ]);
+    const item = el("li", { class: "row" + (p.draft ? " row--draft" : ""), attrs: { id: "card-" + p.id } }, [media, info]);
+    if (p.draft) info.prepend(el("p", { class: "draft-note", text: t("projects.draft") }));
+    return item;
   }
 
   // Bug reports in the format QA teams use (title, steps, expected, actual, severity, evidence)
@@ -206,6 +228,7 @@
       b.onclick = async () => {
         await window.I18N.setLanguage(lang, site.defaultLanguage, true);
         renderAll();
+        if (window.heroField) window.heroField.measureAvoid();
       };
       box.appendChild(b);
     });
@@ -335,7 +358,7 @@
     const index = list.indexOf(p);
     const alts = c(p.id, "gallery") || [];
 
-    const header = el("header", { class: "project__header" }, [
+    const header = el("header", { class: "project__header on-dark" }, [
       el("a", { class: "project__back", text: t("projects.back"), attrs: { href: "#projects" } }),
       el("h1", { class: "project__title", text: c(p.id, "title"), attrs: { tabindex: "-1", id: "project-title" } }),
       el("p", { class: "project__subtitle", text: c(p.id, "subtitle") }),
@@ -400,6 +423,7 @@
       document.title = c(project.id, "title") + " | " + t("hero.name");
       window.scrollTo(0, 0);
       document.getElementById("project-title").focus({ preventScroll: true });
+      window.dispatchEvent(new Event("scroll"));
       return;
     }
 
@@ -432,6 +456,30 @@
     };
   }
 
+  // The header sits over the dark hero and switches to the page colors once you scroll past it
+  function watchHeader() {
+    const header = document.querySelector(".site-header");
+    if (!header) return;
+    // The dark band at the top of the current view: the hero, or a project's title band
+    const band = () => document.getElementById("home-view").hidden
+      ? document.querySelector("#project-view .project__header")
+      : document.querySelector(".hero");
+    const setHeight = () => document.documentElement.style.setProperty("--header-h", header.offsetHeight + "px");
+    let queued = false;
+    const update = () => {
+      queued = false;
+      const b = band();
+      header.classList.toggle("is-over-hero", !!b && b.getBoundingClientRect().bottom > header.offsetHeight);
+      header.classList.toggle("is-at-top", window.scrollY < 8);
+    };
+    const queue = () => { if (!queued) { queued = true; requestAnimationFrame(update); } };
+    setHeight();
+    if ("ResizeObserver" in window) new ResizeObserver(() => { setHeight(); queue(); }).observe(header);
+    window.addEventListener("scroll", queue, { passive: true });
+    window.addEventListener("hashchange", queue);
+    update();
+  }
+
   function renderAll() {
     window.I18N.apply();
     renderLanguageSwitch();
@@ -450,7 +498,8 @@
       projects = await loadJson("data/projects.json");
       await window.I18N.init(site);
       renderAll();
-      if (window.FlowField) window.FlowField.mount(document.getElementById("flow-field"), document.querySelector(".hero__caption"));
+      if (window.FlowField) window.heroField = window.FlowField.mount(document.getElementById("flow-field"), document.querySelector(".hero"));
+      watchHeader();
       document.documentElement.classList.add("is-ready");
       window.addEventListener("hashchange", route);
     } catch (err) {
